@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:07 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/14 14:35:27 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/14 15:26:26 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,21 @@
 # define EMPTY '0'
 
 /*Struct for the window*/
-typedef struct mlx
+typedef struct window
 {
 	void	*mlx_ptr;
 	void	*window_ptr;
-}				t_mlx;
+}				t_window;
 
 /*Struct for the images to make the map*/
-typedef struct path
+typedef struct images
 {
 	void	*wall;
 	void	*empty;
 	void	*collectible;
 	void	*player;
 	void	*exit;
-}				t_path;
+}				t_images;
 
 /*Struct for the map*/
 typedef struct map
@@ -59,31 +59,16 @@ typedef struct map
 	int		exit;
 }				t_map;
 
-/*Struct to check if the map is valid*/
-typedef struct invalid_map
-{
-	int	invalid_columns;
-	int	invalid_borders;
-	int	invalid_exit;
-	int	invalid_collectibles;
-	int	invalid_player;
-	int	invalid_character;
-	int	invalid_path;
-	int	empty_fd;
-}				t_inv_map;
-
 /*Main struct of the program*/
-typedef struct main
+typedef struct main_stack
 {
 	t_map		map;
-	t_map		floodfill;
-	t_inv_map	map_err;
-	t_mlx		mlx;
-	t_path		path;
-}			t_main;
+	t_window	mlx;
+	t_images	images;
+}			t_main_stack;
 
 /*Verify arguments passed to the program*/
-int	check_args(int arg_count, char **args);
+void	check_args(int arg_count, char **args);
 
 /**/
 

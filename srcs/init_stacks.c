@@ -6,22 +6,27 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:23:16 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/14 14:34:09 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/14 17:04:31 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	init_map(t_main main)
+void	init_map(t_main_stack *main_stack)
 {
 	t_map	map;
 
-	map.map_array = 0;
-	map.collectible = 0;
-	map.collumn = 0;
-	map.empty = 0;
-	map.exit = 0;
-	map.line = 0;
-	map.player = 0;
-	map.wall = 0;
+	main_stack->map.map_array = 0;
+	main_stack->map.collectible = 0;
+	main_stack->map.column = 0;
+	main_stack->map.empty = 0;
+	main_stack->map.exit = 0;
+	main_stack->map.line = 0;
+	main_stack->map.player = 0;
+	main_stack->map.wall = 0;
+}
+
+void	init_stacks(t_main_stack *main_stack)
+{
+	init_map(&main_stack);
 }
