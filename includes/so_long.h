@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:07 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/14 10:26:30 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/14 14:35:27 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,6 @@
 # define EXIT 'E'
 # define COLLECTIBLE 'C'
 # define EMPTY '0'
-# define ESC 65307
-# define UP 65362
-# define DOWN 65364
-# define RIGHT 65363
-# define LEFT 65361
 
 /*Struct for the window*/
 typedef struct mlx
@@ -56,7 +51,7 @@ typedef struct map
 {
 	char	**map_array;
 	int		line;
-	int		collumn;
+	int		column;
 	int		wall;
 	int		empty;
 	int		collectible;
@@ -78,14 +73,14 @@ typedef struct invalid_map
 }				t_inv_map;
 
 /*Main struct of the program*/
-typedef struct root
+typedef struct main
 {
 	t_map		map;
 	t_map		floodfill;
 	t_inv_map	map_err;
 	t_mlx		mlx;
 	t_path		path;
-}			t_root;
+}			t_main;
 
 /*Verify arguments passed to the program*/
 int	check_args(int arg_count, char **args);
