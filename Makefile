@@ -6,7 +6,7 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 14:07:55 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/03/13 10:47:50 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/03/14 13:16:34 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,13 +17,13 @@ MLX = mlx/libmlx_Linux.a
 
 CC = cc
 RM = rm -f
-#CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 
-FILES = srcs/main.c
+FILES = srcs/main.c srcs/check_args.c srcs/map_errors.c
 
 OBJ = $(FILES:%.c=%.o)
-FILES_O = srcs/main.o
+FILES_O = srcs/main.o srcs/check_args.o srcs/map_errors.o
 all: $(NAME)
 
 $(LIBFT):

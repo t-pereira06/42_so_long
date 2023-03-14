@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:07 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/13 13:51:36 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/14 10:26:30 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,15 @@
 # define RIGHT 65363
 # define LEFT 65361
 
-typedef struct s_path
+/*Struct for the window*/
+typedef struct mlx
+{
+	void	*mlx_ptr;
+	void	*window_ptr;
+}				t_mlx;
+
+/*Struct for the images to make the map*/
+typedef struct path
 {
 	void	*wall;
 	void	*empty;
@@ -43,9 +51,45 @@ typedef struct s_path
 	void	*exit;
 }				t_path;
 
-typedef struct s_root
+/*Struct for the map*/
+typedef struct map
 {
+	char	**map_array;
+	int		line;
+	int		collumn;
+	int		wall;
+	int		empty;
+	int		collectible;
+	int		player;
+	int		exit;
+}				t_map;
+
+/*Struct to check if the map is valid*/
+typedef struct invalid_map
+{
+	int	invalid_columns;
+	int	invalid_borders;
+	int	invalid_exit;
+	int	invalid_collectibles;
+	int	invalid_player;
+	int	invalid_character;
+	int	invalid_path;
+	int	empty_fd;
+}				t_inv_map;
+
+/*Main struct of the program*/
+typedef struct root
+{
+	t_map		map;
+	t_map		floodfill;
+	t_inv_map	map_err;
+	t_mlx		mlx;
 	t_path		path;
 }			t_root;
+
+/*Verify arguments passed to the program*/
+int	check_args(int arg_count, char **args);
+
+/**/
 
 #endif
