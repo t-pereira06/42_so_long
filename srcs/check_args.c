@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 09:21:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/15 10:40:18 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/15 12:34:19 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,12 @@ void	check_args(int arg_count, char **args)
 
 	fd = open(args[1], O_RDONLY);
 	if (arg_count != 2)
-		return (write(1, "Not enough arguments!\n \
-		Run program with ./so_long <map_name>.ber\n", 65));
+		return (write(1, "Error\n \
+		Not enough arguments! Run program with ./so_long <map_name>.ber\n", 74));
 	else if (check_extension(args[1]) != 1)
-		return (write(1, "Invalid file extension!\n \
-		Run program with ./so_long <map_name>.ber\n", 67));
+		return (write(1, "Error\n \
+		Invalid file extension! Run program with ./so_long <map_name>.ber\n", 76));
 	else if (fd < 0)
-		return (write(1, "Invalid file! Run program with ./so_long <map_name>.ber\n", 57));
+		return (write(1, "Error\n \
+		Invalid file! Run program with ./so_long <map_name>.ber\n", 57));
 }
