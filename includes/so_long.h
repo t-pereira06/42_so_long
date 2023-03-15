@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:07 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/15 12:29:12 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/15 17:16:29 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@ typedef struct check_map
 }			t_check_map;
 
 /*Verify arguments passed to the program*/
-void	check_args(int arg_count, char **args);
+int	check_args(int arg_count, char **args);
 
 /*Start stack*/
-void	init_struct(t_stack *stack);
+void	init_stack(t_stack *stack);
 void	init_stack_check_map(t_check_map *stack_check_map);
 
 //CHECK IF THE MAP IS OK

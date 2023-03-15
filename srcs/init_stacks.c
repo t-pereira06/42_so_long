@@ -6,13 +6,13 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:23:16 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/15 12:20:36 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/15 17:16:24 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void	init_struct(t_stack *stack)
+void	init_stack(t_stack *stack)
 {
 	stack->mlx_ptr = 0;
 	stack->window_ptr = 0;
