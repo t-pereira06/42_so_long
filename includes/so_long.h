@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:07 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/15 11:21:57 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/15 12:28:42 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,9 @@ typedef struct stack
 	int		exit;
 }			t_stack;
 
-typedef struct invalid_map
+typedef struct check_map
 {
+	char	**map_array;
 	int		line;
 	int		column;
 	int		wall;
@@ -58,16 +59,20 @@ typedef struct invalid_map
 	int		collectible;
 	int		player;
 	int		exit;
-}			t_invmap;
+}			t_check_map;
 
 /*Verify arguments passed to the program*/
 void	check_args(int arg_count, char **args);
 
 /*Start stack*/
 void	init_struct(t_stack *stack);
+void	init_stack_check_map(t_check_map *stack_check_map);
 
 //CHECK IF THE MAP IS OK
 /*Check if the map is valid*/
-void	check_map(char *argv, t_invmap *invalid_map);
+void	check_map(char *argv, t_check_map *stack_check_map);
+int		count_columns(char	**array);
+int		check_character(char **array);
+int		count_lines(char **array);
 
 #endif

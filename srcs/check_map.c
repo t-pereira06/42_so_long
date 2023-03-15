@@ -6,38 +6,13 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:33:20 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/15 11:26:50 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/15 12:28:45 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-/*Check if the characters are valid*/
-int	check_character(char **array)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (array[i] != '\0')
-	{
-		while (array[i][j] != '\0')
-		{
-			if ((array[i][j] != PLAYER) && (array[i][j] != WALL) \
-			&& (array[i][j] != EXIT) && (array[i][j] != COLLECTIBLE) \
-			&& (array[i][j] != EMPTY))
-			{
-				return (0);
-			}
-			j++;
-		}
-		i++;
-	}
-	return (1);
-}
-
-void	check_map(char *argv, t_invmap *invalid_map)
+char	fill_array(char *argv)
 {
 	char	**array;
 	char	*line;
@@ -53,11 +28,24 @@ void	check_map(char *argv, t_invmap *invalid_map)
 		line = get_next_line(fd);
 		if (line == NULL)
 			break;
-		array[i] = line;
 		free(line);
 		i++;
 	}
 	close(fd);
-	check_character(array);
 	free(path);
+	return (array);
+}
+
+void	check_map(char *argv, t_check_map *stack_check_map)
+{
+	char	**array;
+
+	array = fill_array(argv);
+	if (check_character(array) == 0)
+	{
+		write(1, "Map Error! Invalid Character Found", 65);
+		free(array);
+		exit(1);
+	}
+	fill_stack_check_map(array, stack_check_map);
 }
