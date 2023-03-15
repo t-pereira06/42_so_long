@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_map_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 12:08:14 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/15 10:41:58 by tsodre-p         ###   ########.fr       */
+/*   Created: 2023/03/15 11:22:22 by tsodre-p          #+#    #+#             */
+/*   Updated: 2023/03/15 11:25:25 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
-
-int	main(int argc, char** argv)
+int	count_columns(char	**array)
 {
-	t_stack	*stack;
+	int	i;
 
-	check_args(argc,argv);
-	init_struct(stack);
+	while (array[i] != '\0')
+		i++;
+	return (i);
+}
+
+int	count_lines(char **array)
+{
+	int	i;
+
+	while (array[0][i] != "\0")
+		i++;
+	return (i);
 }

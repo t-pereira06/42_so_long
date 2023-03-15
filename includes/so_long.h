@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:07 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/14 15:26:26 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/15 11:21:57 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,26 +29,16 @@
 # define COLLECTIBLE 'C'
 # define EMPTY '0'
 
-/*Struct for the window*/
-typedef struct window
+/*Struct of the program*/
+typedef struct stack
 {
 	void	*mlx_ptr;
 	void	*window_ptr;
-}				t_window;
-
-/*Struct for the images to make the map*/
-typedef struct images
-{
-	void	*wall;
-	void	*empty;
-	void	*collectible;
-	void	*player;
-	void	*exit;
-}				t_images;
-
-/*Struct for the map*/
-typedef struct map
-{
+	void	*img_wall;
+	void	*img_empty;
+	void	*img_collectible;
+	void	*img_player;
+	void	*img_exit;
 	char	**map_array;
 	int		line;
 	int		column;
@@ -57,19 +47,27 @@ typedef struct map
 	int		collectible;
 	int		player;
 	int		exit;
-}				t_map;
+}			t_stack;
 
-/*Main struct of the program*/
-typedef struct main_stack
+typedef struct invalid_map
 {
-	t_map		map;
-	t_window	mlx;
-	t_images	images;
-}			t_main_stack;
+	int		line;
+	int		column;
+	int		wall;
+	int		empty;
+	int		collectible;
+	int		player;
+	int		exit;
+}			t_invmap;
 
 /*Verify arguments passed to the program*/
 void	check_args(int arg_count, char **args);
 
-/**/
+/*Start stack*/
+void	init_struct(t_stack *stack);
+
+//CHECK IF THE MAP IS OK
+/*Check if the map is valid*/
+void	check_map(char *argv, t_invmap *invalid_map);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 09:21:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/14 14:38:19 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/15 10:40:18 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	check_extension(char *arg)
 	return (1);
 }
 
-int	check_args(int arg_count, char **args)
+void	check_args(int arg_count, char **args)
 {
 	int	fd;
 
@@ -35,5 +35,4 @@ int	check_args(int arg_count, char **args)
 		Run program with ./so_long <map_name>.ber\n", 67));
 	else if (fd < 0)
 		return (write(1, "Invalid file! Run program with ./so_long <map_name>.ber\n", 57));
-	return (1);
 }
