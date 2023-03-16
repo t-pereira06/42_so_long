@@ -8,9 +8,12 @@ and some other very basic gameplay elements.
 You must run the program with maps that have the .ber extension, in which the following parameters must be met:
 
 ◦ All map must be surrounded by walls : '1'
+
 ◦ Contain only 1 player: '1'
+
 ◦ Have 1 or more exits: 'E'
-◦ Contain, at least, 1 collectible: ☞ ''
+
+◦ Contain, at least, 1 collectible: ☞ 'C'
 
 
 ## How To Play The Game
