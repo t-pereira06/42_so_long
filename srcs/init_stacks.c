@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:23:16 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/15 17:16:24 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/16 15:28:09 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,4 @@ void	init_stack(t_stack *stack)
 	stack->collectible = 0;
 	stack->player = 0;
 	stack->exit = 0;
-}
-
-void	init_stack_check_map(t_check_map *stack_check_map)
-{
-	stack_check_map->map_array = 0;
-	stack_check_map->line = 0;
-	stack_check_map->column = 0;
-	stack_check_map->wall = 0;
-	stack_check_map->empty = 0;
-	stack_check_map->collectible = 0;
-	stack_check_map->player = 0;
-	stack_check_map->exit = 0;
 }

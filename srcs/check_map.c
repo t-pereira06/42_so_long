@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:33:20 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/15 12:35:08 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/16 17:02:55 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,9 @@ char	fill_array(char *argv)
 	return (array);
 }
 
-void	check_map(char *argv, t_check_map *stack_check_map)
+void	check_map(char *argv, t_stack *stack)
 {
-	char	**array;
-
-	array = fill_array(argv);
-	if (check_character(array) == 0)
-	{
-		write(1, "Error\nMap Error! Invalid Character Found", 65);
-		free(array);
-		exit(1);
-	}
-	fill_stack_check_map(array, stack_check_map);
+	stack->map_array = fill_array(argv);
+	check_character(stack->map_array,stack);
+	check_map_size(stack->map_array, stack);
 }
