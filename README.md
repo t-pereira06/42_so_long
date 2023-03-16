@@ -40,3 +40,5 @@ $ ./so_long <map_name>.ber
 |`A`, ⬅️|LEFT|
 |`S`, ⬇️|DOWN|
 |`D`, ➡️|RIGHT|
+
+## Grade:
