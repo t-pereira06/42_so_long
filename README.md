@@ -1,4 +1,4 @@
-# 42_so_long
+## so_long
 
 This project is a very small 2D game.
 Its purpose is to make you work with textures, sprites,
