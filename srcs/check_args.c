@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 09:21:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/20 10:57:45 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/20 11:03:11 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	check_args(int arg_count, char **args)
 {
 	int	fd;
 
-	fd = open(args[1], O_RDONLY);
+	fd = open(ft_strjoin("maps/", args[1]), O_RDONLY);
 	if (arg_count != 2)
 		return (write(1, "Error\n \
 		Not enough arguments! Run program with ./so_long <map_name>.ber\n", 74));
@@ -36,6 +36,6 @@ int	check_args(int arg_count, char **args)
 		Invalid file ext.! Run program with ./so_long <map_name>.ber\n", 71));
 	else if (fd < 0)
 		return (write(1, "Error\n \
-		Invalid file! Run program with ./so_long <map_name>.ber\n", 57));
+		Invalid file! Run program with ./so_long <map_name>.ber\n", 66));
 	return (1);
 }

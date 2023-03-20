@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:22:22 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/20 09:30:57 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/20 11:04:01 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	check_character(char **array, t_stack *stack)
 			&& (array[i][j] != EXIT) && (array[i][j] != COLLECTIBLE) \
 			&& (array[i][j] != EMPTY))
 			{
-				write(1, "Error\nMap Error! Invalid Character Found", 65);
+				write(1, "Error\nMap Error! Invalid Character Found", 41);
 				free(stack->map_array);
 				exit(1);
 			}
@@ -77,13 +77,13 @@ void	check_map_size(t_stack *stack)
 	num_rows = count_lines(stack->map_array);
 	if (surrounded_by_walls(stack->map_array, num_rows) == 0)
 	{
-		write(1, "Error\nMap Error! Map is not valid", 65);
+		write(1, "Error\nMap Error! Map is not valid", 34);
 		free(stack->map_array);
 		exit(1);
 	}
 	if (count_char_in_line(stack->map_array, num_cols, num_rows) == 0)
 	{
-		write(1, "Error\nMap Error! Map is not valid", 65);
+		write(1, "Error\nMap Error! Map is not valid", 34);
 		free(stack->map_array);
 		exit(1);
 	}
