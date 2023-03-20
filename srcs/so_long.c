@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:14 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/20 11:46:15 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/20 14:52:31 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	init_stack(t_stack *stack)
 	stack->collectible = 0;
 	stack->player = 0;
 	stack->exit = 0;
+	stack->x = 0;
+	stack->y = 0;
 }
 
 int	main(int argc, char **argv)

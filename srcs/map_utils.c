@@ -1,34 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_errors_utils.c                                 :+:      :+:    :+:   */
+/*   map_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:45:17 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/20 09:32:01 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/20 15:40:57 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	count_columns(char	**array)
+int	count_columns(char	*argv)
 {
-	int	i;
+	char	*line;
+	char	*path;
+	int		i;
+	int		fd;
 
 	i = 0;
-	while (array[i] != NULL)
+	path = ft_strjoin("maps/", argv);
+	fd = open(path, O_RDONLY);
+	line = get_next_line(fd);
+	while (line[i] != '\n')
 		i++;
+	free(line);
+	close(fd);
+	free(path);
 	return (i);
 }
 
-int	count_lines(char **array)
+int	count_lines(char *argv)
 {
-	int	i;
+	char	*line;
+	char	*path;
+	int		i;
+	int		fd;
 
 	i = 0;
-	while (array[0][i] != '\0')
+	path = ft_strjoin("maps/", argv);
+	fd = open(path, O_RDONLY);
+	while (1)
+	{
+		line = get_next_line(fd);
+		if (line == NULL)
+			break ;
+		free(line);
 		i++;
+	}
+	free(line);
+	close(fd);
+	free(path);
 	return (i);
 }
 

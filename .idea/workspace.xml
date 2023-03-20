@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6f849615-d607-42ff-8d4a-b056d0e7160f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/includes/so_long.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/so_long.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/check_args.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/check_args.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/check_map.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/check_map.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/map_errors_utils.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/so_long.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/so_long.c" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2NHeI0VUFGqKoS7u7SoaYAPvhar" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/nfs/homes/tsodre-p/42cursus/so_long",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6f849615-d607-42ff-8d4a-b056d0e7160f" name="Changes" comment="" />
+      <created>1679325350603</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1679325350603</updated>
+      <workItem from="1679325352270" duration="24000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
