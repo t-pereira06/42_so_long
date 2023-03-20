@@ -32,7 +32,7 @@ After compiling, execute the program, followed by the map:
 ```bash
 $ ./so_long <map_name>.ber
 ```
-If you want to clean the object files, execute:
+After playing the game, if you want to clean the object files, execute:
 ```bash
 $ make fclean
 
