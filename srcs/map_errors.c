@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:22:22 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/16 17:55:33 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/20 09:30:57 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	check_character(char **array, t_stack *stack)
 
 	i = 0;
 	j = 0;
-	while (array[i] != '\0')
+	while (array[i] != NULL)
 	{
 		while (array[i][j] != '\0')
 		{
@@ -38,12 +38,12 @@ void	check_character(char **array, t_stack *stack)
 	}
 }
 
-int	surrounded_by_walls(char **array, int num_cols, int num_rows)
+int	surrounded_by_walls(char **array, int num_rows)
 {
 	int	i;
 
 	i = 0;
-	while (array[0] != '\0')
+	while (array[0][i] != '\0')
 	{
 		if (array[0][i] != 1)
 			return (0);
@@ -57,7 +57,7 @@ int	surrounded_by_walls(char **array, int num_cols, int num_rows)
 		i++;
 	}
 	i = 0;
-	while (array[num_rows - 1] != '\0')
+	while (array[num_rows - 1] != NULL)
 	{
 		if (array[num_rows - 1][i] != 1)
 			return (0);
@@ -66,7 +66,7 @@ int	surrounded_by_walls(char **array, int num_cols, int num_rows)
 	return (1);
 }
 
-void	check_map_size(char **array, t_stack *stack)
+void	check_map_size(t_stack *stack)
 {
 	int	num_cols;
 	int	num_rows;
@@ -75,7 +75,7 @@ void	check_map_size(char **array, t_stack *stack)
 	num_rows = 0;
 	num_cols = count_columns(stack->map_array);
 	num_rows = count_lines(stack->map_array);
-	if (surrounded_by_walls(stack->map_array, num_cols, num_rows) == 0)
+	if (surrounded_by_walls(stack->map_array, num_rows) == 0)
 	{
 		write(1, "Error\nMap Error! Map is not valid", 65);
 		free(stack->map_array);

@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 10:01:44 by tsodre-p          #+#    #+#             */
-/*   Updated: 2022/11/16 10:45:53 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/20 09:37:04 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@
 # endif
 
 char	*ft_strchr(const char *s, int c);
-char	*ft_strjoin(char const *s1, char const *s2);
-size_t	ft_strlen(const char *s);
+char	*ft_strjoin_utils(char const *s1, char const *s2);
+size_t	ft_strlen_utils(const char *s);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*get_next_line(int fd);
 

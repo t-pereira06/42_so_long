@@ -6,7 +6,7 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 14:07:55 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/03/15 17:14:43 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/03/20 09:11:49 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,12 +20,12 @@ RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 
-FILES = srcs/so_long.c srcs/check_args.c srcs/check_map_utils.c srcs/check_map.c \
-		srcs/fill_stack_check_map.c srcs/init_stacks.c srcs/map_errors.c
+FILES = srcs/so_long.c srcs/check_args.c srcs/check_map.c \
+		srcs/map_errors.c srcs/map_errors_utils.c
 
 OBJ = $(FILES:%.c=%.o)
-FILES_O = srcs/so_long.o srcs/check_args.o srcs/check_map_utils.o srcs/check_map.o \
-		srcs/fill_stack_check_map.o srcs/init_stacks.o srcs/map_errors.o
+FILES_O = srcs/so_long.o srcs/check_args.o srcs/check_map.o \
+		srcs/map_errors.o srcs/map_errors_utils.o
 all: $(NAME)
 
 $(LIBFT):

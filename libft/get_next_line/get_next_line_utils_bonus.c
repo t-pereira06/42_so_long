@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 11:54:50 by tsodre-p          #+#    #+#             */
-/*   Updated: 2022/11/16 11:55:32 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/20 09:40:15 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin_utils(char const *s1, char const *s2)
 {
 	char	*str;
 	size_t	s1_count;
 	size_t	s2_count;
 	size_t	len;
 
-	len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	len = ft_strlen_utils(s1) + ft_strlen_utils(s2) + 1;
 	str = (char *)malloc(len * sizeof(char));
 	if (!str)
 		return (NULL);
@@ -55,7 +55,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (str);
 }
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen_utils(const char *str)
 {
 	size_t	i;
 

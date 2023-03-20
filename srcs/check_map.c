@@ -6,13 +6,13 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:33:20 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/16 17:02:55 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/20 09:30:42 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-char	fill_array(char *argv)
+char	**fill_array(char *argv)
 {
 	char	**array;
 	char	*line;
@@ -21,6 +21,7 @@ char	fill_array(char *argv)
 	int		fd;
 
 	i = 0;
+	array = 0;
 	path = ft_strjoin("maps/", argv);
 	fd = open(path, O_RDONLY);
 	while (1)
@@ -39,6 +40,6 @@ char	fill_array(char *argv)
 void	check_map(char *argv, t_stack *stack)
 {
 	stack->map_array = fill_array(argv);
-	check_character(stack->map_array,stack);
-	check_map_size(stack->map_array, stack);
+	check_character(stack->map_array, stack);
+	check_map_size(stack);
 }

@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 10:01:41 by tsodre-p          #+#    #+#             */
-/*   Updated: 2022/11/17 10:56:48 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/20 09:36:51 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static char	*ft_join(char *file, char *temp)
 {
 	char	*final;
 
-	final = ft_strjoin(file, temp);
+	final = ft_strjoin_utils(file, temp);
 	free(file);
 	return (final);
 }
@@ -90,7 +90,7 @@ static char	*next_line(char *file)
 		free(file);
 		return (NULL);
 	}
-	temp = ft_calloc((ft_strlen(file) - i + 1), sizeof(char));
+	temp = ft_calloc((ft_strlen_utils(file) - i + 1), sizeof(char));
 	i++;
 	j = 0;
 	while (file[i])
