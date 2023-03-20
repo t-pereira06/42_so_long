@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:33:20 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/20 10:56:56 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/20 12:01:46 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	**fill_array(char *argv)
 	int		fd;
 
 	i = 0;
-	array = 0;
+	array = (char **)malloc(sizeof(char *) * (count_lines() + 1));
 	path = ft_strjoin("maps/", argv);
 	fd = open(path, O_RDONLY);
 	while (1)
@@ -29,6 +29,7 @@ char	**fill_array(char *argv)
 		line = get_next_line(fd);
 		if (line == NULL)
 			break ;
+		array[i] = line;
 		free(line);
 		i++;
 	}
