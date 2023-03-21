@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr_utils(const char *s, int c)
 {
 	const char	*ptr;
 
@@ -65,7 +65,7 @@ size_t	ft_strlen_utils(const char *str)
 	return (i);
 }
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc_utils(size_t nmemb, size_t size)
 {
 	char	*final;
 	size_t	total;

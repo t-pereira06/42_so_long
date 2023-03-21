@@ -29,9 +29,9 @@ static char	*create_file(int fd, char *file)
 	char	*temp;
 	int		nchar_read;
 
-	if (ft_strchr(file, '\n'))
+	if (ft_strchr_utils(file, '\n'))
 		return (file);
-	temp = ft_calloc((BUFFER_SIZE + 1), sizeof(char));
+	temp = ft_calloc_utils((BUFFER_SIZE + 1), sizeof(char));
 	nchar_read = 1;
 	while (nchar_read > 0)
 	{
@@ -43,7 +43,7 @@ static char	*create_file(int fd, char *file)
 		}
 		temp[nchar_read] = 0;
 		file = ft_join(file, temp);
-		if (ft_strchr(temp, '\n'))
+		if (ft_strchr_utils(temp, '\n'))
 			break ;
 	}
 	free(temp);
@@ -63,7 +63,7 @@ static char	*first_line(char *file)
 	}
 	while (file[i] && file[i] != '\n')
 		i++;
-	first_line = ft_calloc(i + 2, sizeof(char));
+	first_line = ft_calloc_utils(i + 2, sizeof(char));
 	i = 0;
 	while (file[i] && file[i] != '\n')
 	{
@@ -90,7 +90,7 @@ static char	*next_line(char *file)
 		free(file);
 		return (NULL);
 	}
-	temp = ft_calloc((ft_strlen_utils(file) - i + 1), sizeof(char));
+	temp = ft_calloc_utils((ft_strlen_utils(file) - i + 1), sizeof(char));
 	i++;
 	j = 0;
 	while (file[i])
@@ -109,7 +109,7 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	if (file == 0)
-		file = ft_calloc(1, 1);
+		file = ft_calloc_utils(1, 1);
 	file = create_file(fd, file);
 	if (file == 0)
 	{
@@ -125,12 +125,12 @@ char	*get_next_line(int fd)
 	char	*line;
 	int		i;
 	int		fd;
-	fd = open("tests/test1.txt", O_RDONLY);
+	fd = open("map1.ber", O_RDONLY);
 	i = 1;
 	if (fd == -1)
 		printf("No file found");
 	printf("fd = %d\n", fd);
-	while (i < 8)
+	while (i < 6)
 	{
 		line = get_next_line(fd);
 		printf("line [%02d]: %s\n", i, line);

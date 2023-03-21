@@ -24,10 +24,10 @@
 #  define BUFFER_SIZE 10000
 # endif
 
-char	*ft_strchr(const char *s, int c);
+char	*ft_strchr_utils(const char *s, int c);
 char	*ft_strjoin_utils(char const *s1, char const *s2);
 size_t	ft_strlen_utils(const char *s);
-void	*ft_calloc(size_t nmemb, size_t size);
+void	*ft_calloc_utils(size_t nmemb, size_t size);
 char	*get_next_line(int fd);
 
 #endif
