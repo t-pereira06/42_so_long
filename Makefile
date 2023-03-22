@@ -15,7 +15,7 @@ NAME = so_long
 LIBFT = libft/libft.a
 MLX = mlx/libmlx_Linux.a
 
-CC = cc
+CC = cc -g
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
