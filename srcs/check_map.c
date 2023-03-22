@@ -23,17 +23,14 @@ void	fill_array(char *argv, t_stack *stack)
 	stack->map_array = (char **)malloc(sizeof(char *) * (stack->x + 1));
 	path = ft_strjoin("maps/", argv);
 	fd = open(path, O_RDONLY);
-	while (1)
+	while (i < stack->x)
 	{
 		line = get_next_line(fd);
-		printf("%s", line);
-		if (line == NULL)
-			break ;
+		printf("line [%02d]: %s", i + 1, line);
 		stack->map_array[i] = ft_strtrim(line, "\n");
 		free(line);
 		i++;
 	}
-	free(line);
 	close(fd);
 	free(path);
 }

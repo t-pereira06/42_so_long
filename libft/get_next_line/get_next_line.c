@@ -125,12 +125,12 @@ char	*get_next_line(int fd)
 	char	*line;
 	int		i;
 	int		fd;
-	fd = open("map1.ber", O_RDONLY);
+	fd = open("map2.ber", O_RDONLY);
 	i = 1;
 	if (fd == -1)
 		printf("No file found");
 	printf("fd = %d\n", fd);
-	while (i < 6)
+	while (i < 8)
 	{
 		line = get_next_line(fd);
 		printf("line [%02d]: %s\n", i, line);
