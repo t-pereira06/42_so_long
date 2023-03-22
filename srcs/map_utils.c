@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:45:17 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/20 15:40:57 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/22 15:07:34 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	count_columns(char	*argv)
 	while (line[i] != '\n')
 		i++;
 	free(line);
-	close(fd);
 	free(path);
+	close(fd);
 	return (i);
 }
 
@@ -50,8 +50,8 @@ int	count_lines(char *argv)
 		i++;
 	}
 	free(line);
-	close(fd);
 	free(path);
+	close(fd);
 	return (i);
 }
 

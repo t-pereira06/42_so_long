@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:33:20 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/20 16:50:46 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/22 15:07:31 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ void	fill_array(char *argv, t_stack *stack)
 	int		fd;
 
 	i = 0;
-	stack->map_array = (char **)malloc(sizeof(char *) * (stack->x + 1));
+	line = 0;
+	stack->map_array = (char **)malloc(sizeof(char *) * (8));
 	path = ft_strjoin("maps/", argv);
 	fd = open(path, O_RDONLY);
-	while (i < stack->x)
+	while (i < 8)
 	{
 		line = get_next_line(fd);
 		printf("line [%02d]: %s", i + 1, line);
@@ -37,8 +38,11 @@ void	fill_array(char *argv, t_stack *stack)
 
 void	check_map(char *argv, t_stack *stack)
 {
-	stack->x = count_lines(argv);
+	//erro esta quando executa o count columns e o count lines
 	stack->y = count_columns(argv);
+	stack->x = count_lines(argv);
+	printf("%i", stack->y);
+	printf("%i", stack->x);
 	fill_array(argv, stack);
 	check_map_size(stack);
 	check_character(stack->map_array, stack);
