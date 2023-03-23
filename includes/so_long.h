@@ -40,15 +40,13 @@ typedef struct stack
 	void	*img_player;
 	void	*img_exit;
 	char	**map_array;
-	int		line;
-	int		column;
+	int		rows;
+	int		columns;
 	int		wall;
 	int		empty;
 	int		collectible;
 	int		player;
 	int		exit;
-	int		x;
-	int		y;
 }			t_stack;
 
 /*Verify arguments passed to the program*/
@@ -57,7 +55,7 @@ int	check_args(int arg_count, char **args);
 //CHECK IF THE MAP IS OK
 /*Check if the map is valid*/
 void	check_map(char *argv, t_stack *stack);
-int		count_columns(char	*argv);
+int		count_columns(char	*line);
 void	check_character(char **array, t_stack *stack);
 int		count_lines(char *argv);
 void	check_map_size(t_stack *stack);

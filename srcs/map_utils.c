@@ -12,23 +12,14 @@
 
 #include "../includes/so_long.h"
 
-int	count_columns(char	*argv)
+int	count_columns(char	*line)
 {
-	char	*line;
-	char	*path;
-	int		i;
-	int		fd;
+	int	i;
 
 	i = 0;
-	path = ft_strjoin("maps/", argv);
-	fd = open(path, O_RDONLY);
-	line = get_next_line(fd);
-	while (line[i] != '\n')
+	while (line[i] != '\0')
 		i++;
-	free(line);
-	free(path);
-	close(fd);
-	return (i);
+	return(i);
 }
 
 int	count_lines(char *argv)

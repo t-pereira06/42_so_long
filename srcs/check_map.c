@@ -21,29 +21,26 @@ void	fill_array(char *argv, t_stack *stack)
 
 	i = 0;
 	line = 0;
-	stack->map_array = (char **)malloc(sizeof(char *) * (8));
+	stack->map_array = (char **)malloc(sizeof(char *) * (stack->rows + 1));
 	path = ft_strjoin("maps/", argv);
 	fd = open(path, O_RDONLY);
-	while (i < 8)
+	while (i < stack->rows)
 	{
 		line = get_next_line(fd);
-		printf("line [%02d]: %s", i + 1, line);
 		stack->map_array[i] = ft_strtrim(line, "\n");
 		free(line);
 		i++;
 	}
+	stack->map_array[i] = 0;
 	close(fd);
 	free(path);
 }
 
 void	check_map(char *argv, t_stack *stack)
 {
-	//erro esta quando executa o count columns e o count lines
-	stack->y = count_columns(argv);
-	stack->x = count_lines(argv);
-	printf("%i", stack->y);
-	printf("%i", stack->x);
-	fill_array(argv, stack);
+	stack->rows = count_lines(argv);
+	fill_array(argv, stack);\
+	stack->columns = count_columns(stack->map_array[0]);
 	check_map_size(stack);
 	check_character(stack->map_array, stack);
 }

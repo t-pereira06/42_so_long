@@ -69,18 +69,20 @@ int	surrounded_by_walls(char **array, int num_rows)
 void	check_map_size(t_stack *stack)
 {
 	//printf("%s", stack->map_array[0]);
-	if (surrounded_by_walls(stack->map_array, stack->x) == 0)
+	if (surrounded_by_walls(stack->map_array, stack->rows) == 0)
 	{
 		write(1, "Map Error! Map is not surrounded by walls!", 43);
 		free(stack->map_array);
 		exit(1);
 	}
-	if (count_char_in_line(stack->map_array, stack->y, stack->x) == 0)
+	if (count_char_in_line(stack->map_array, stack->columns, stack->rows) == 0)
 	{
 		write(1, "Map Error! Map is not valid!", 29);
 		free(stack->map_array);
 		exit(1);
 	}
+	//y = linhas
+	//x = colunas
 	//falta contar players, etc
 	//n colunas iguais em cada linha
 	//surrounded by walls

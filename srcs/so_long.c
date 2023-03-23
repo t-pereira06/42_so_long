@@ -22,15 +22,13 @@ void	init_stack(t_stack *stack)
 	stack->img_player = 0;
 	stack->img_exit = 0;
 	stack->map_array = 0;
-	stack->line = 0;
-	stack->column = 0;
+	stack->rows = 0;
+	stack->columns = 0;
 	stack->wall = 0;
 	stack->empty = 0;
 	stack->collectible = 0;
 	stack->player = 0;
 	stack->exit = 0;
-	stack->x = 0;
-	stack->y = 0;
 }
 
 int	main(int argc, char **argv)
