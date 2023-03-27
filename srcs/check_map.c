@@ -6,12 +6,13 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:33:20 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/27 11:38:37 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/27 15:54:12 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
+/*Fill stack->map_array with the map from file*/
 void	fill_array(char *argv, t_stack *stack)
 {
 	char	*line;
@@ -36,6 +37,7 @@ void	fill_array(char *argv, t_stack *stack)
 	free(path);
 }
 
+/*Calling functions to check if the map is valid*/
 void	check_map(char *argv, t_stack *stack)
 {
 	stack->rows = count_lines(argv);
@@ -43,4 +45,7 @@ void	check_map(char *argv, t_stack *stack)
 	stack->columns = count_columns(stack->map_array[0]);
 	check_map_size(stack);
 	check_character(stack->map_array, stack);
+	check_miscellaneous(stack);
+	//certo ate aqui
+	//falta contar players, etc
 }

@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:22:22 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/27 11:40:08 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/27 15:36:33 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,4 @@ void	check_map_size(t_stack *stack)
 		free(stack->map_array);
 		exit(1);
 	}
-	//y = linhas
-	//x = colunas
-	//falta contar players, etc
-	//n colunas iguais em cada linha
-	//surrounded by walls
-	//ver se tens player, etc
 }

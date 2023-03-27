@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:07 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/22 15:07:10 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/27 15:54:11 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,17 +49,25 @@ typedef struct stack
 	int		exit;
 }			t_stack;
 
-/*Verify arguments passed to the program*/
-int	check_args(int arg_count, char **args);
+/*check_args.c*/
+int		check_args(int arg_count, char **args);
 
-//CHECK IF THE MAP IS OK
-/*Check if the map is valid*/
+/*check_map.c*/
+void	fill_array(char *argv, t_stack *stack);
 void	check_map(char *argv, t_stack *stack);
-int		count_columns(char	*line);
-void	check_character(char **array, t_stack *stack);
-int		count_lines(char *argv);
-void	check_map_size(t_stack *stack);
-int		count_char_in_line(char **array, int num_cols, int num_rows);
 
+/*map_errors.c*/
+int		count_char_in_line(char **array, int num_rows, int num_cols);
+int		surrounded_by_walls(char **array, int num_rows, int num_cols);
+void	check_map_size(t_stack *stack);
+
+/*map_utils.c*/
+int		count_columns(char	*line);
+int		count_lines(char *argv);
+void	check_character(char **array, t_stack *stack);
+void	count_miscellaneous(t_stack *stack);
+
+/*map_utils_2.c*/
+void	check_miscellaneous(t_stack *stack);
 
 #endif

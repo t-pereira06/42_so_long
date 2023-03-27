@@ -6,12 +6,13 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 09:21:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/20 15:30:38 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/27 15:40:26 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
+/*Check if the extension of the file is .ber*/
 int	check_extension(char *arg)
 {
 	char	*ext;
@@ -23,6 +24,7 @@ int	check_extension(char *arg)
 	return (1);
 }
 
+/*Check the arguments*/
 int	check_args(int arg_count, char **args)
 {
 	char	*path;
