@@ -6,12 +6,14 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:45:17 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/27 11:25:02 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/27 11:41:12 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
+
+/*Count map columns*/
 int	count_columns(char	*line)
 {
 	int	i;
@@ -22,6 +24,7 @@ int	count_columns(char	*line)
 	return(i);
 }
 
+/*Count map lines*/
 int	count_lines(char *argv)
 {
 	char	*line;
@@ -46,24 +49,28 @@ int	count_lines(char *argv)
 	return (i);
 }
 
-int	count_char_in_line(char **array, int num_rows, int num_cols)
+/*Checks if all characters are valid*/
+void	check_character(char **array, t_stack *stack)
 {
 	int	i;
 	int	j;
-	int	char_count;
 
 	i = 0;
 	j = 0;
-	char_count = 0;
-	while (i < num_rows - 1)
+	while (array[i] != NULL)
 	{
 		while (array[i][j] != '\0')
-			char_count++;
-		if (char_count != num_cols)
-			return (0);
-		char_count = 0;
-		j = 0;
+		{
+			if ((array[i][j] != PLAYER) || (array[i][j] != WALL) \
+			|| (array[i][j] != EXIT) || (array[i][j] != COLLECTIBLE) \
+			|| (array[i][j] != EMPTY))
+			{
+				write(1, "Map Error! Invalid Character Found!", 36);
+				free(stack->map_array);
+				exit(1);
+			}
+			j++;
+		}
 		i++;
 	}
-	return (1);
 }

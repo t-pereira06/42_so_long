@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:33:20 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/27 11:24:13 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/27 11:38:37 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,6 @@ void	fill_array(char *argv, t_stack *stack)
 
 void	check_map(char *argv, t_stack *stack)
 {
-	int	i;
-
-	i = 1;
 	stack->rows = count_lines(argv);
 	fill_array(argv, stack);
 	stack->columns = count_columns(stack->map_array[0]);
