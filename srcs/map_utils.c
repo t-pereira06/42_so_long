@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:45:17 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/22 15:07:34 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/27 11:25:02 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	count_lines(char *argv)
 	return (i);
 }
 
-int	count_char_in_line(char **array, int num_cols, int num_rows)
+int	count_char_in_line(char **array, int num_rows, int num_cols)
 {
 	int	i;
 	int	j;
