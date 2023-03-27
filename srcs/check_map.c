@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:33:20 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/27 15:54:12 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/27 17:58:33 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,4 @@ void	check_map(char *argv, t_stack *stack)
 	check_map_size(stack);
 	check_character(stack->map_array, stack);
 	check_miscellaneous(stack);
-	//certo ate aqui
-	//falta contar players, etc
 }

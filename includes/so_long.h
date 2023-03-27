@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:07 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/27 15:54:11 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/27 17:49:53 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,8 @@ void	count_miscellaneous(t_stack *stack);
 
 /*map_utils_2.c*/
 void	check_miscellaneous(t_stack *stack);
+
+/*free_stack.c*/
+void	free_stack(t_stack *stack);
 
 #endif

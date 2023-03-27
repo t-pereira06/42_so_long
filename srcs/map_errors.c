@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:22:22 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/27 15:36:33 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/27 17:58:13 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,13 +73,13 @@ void	check_map_size(t_stack *stack)
 	if (count_char_in_line(stack->map_array, stack->rows, stack->columns) == 0)
 	{
 		write(1, "Map Error! Map is not valid!", 29);
-		free(stack->map_array);
+		free_stacks(stack);
 		exit(1);
 	}
 	if (surrounded_by_walls(stack->map_array, stack->rows, stack->columns) == 0)
 	{
 		write(1, "Map Error! Map is not surrounded by walls!", 43);
-		free(stack->map_array);
+		free_stacks(stack);
 		exit(1);
 	}
 }

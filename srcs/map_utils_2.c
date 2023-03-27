@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:43:37 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/27 15:52:38 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/27 17:58:04 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,19 @@ void	check_miscellaneous(t_stack *stack)
 	if (stack->player != 1)
 	{
 		write(1, "The map needs to have 1 Player only!", 37);
-		free(stack->map_array);
+		free_stacks(stack);
 		exit(1);
 	}
 	else if (stack->exit != 1)
 	{
 		write(1, "The map needs to have 1 Exit only!", 35);
-		free(stack->map_array);
+		free_stacks(stack);
 		exit(1);
 	}
 	else if (stack->collectible < 1)
 	{
 		write(1, "The map needs to have 1 or more Collectibles!", 46);
-		free(stack->map_array);
+		free_stacks(stack);
 		exit(1);
 	}
 }
