@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:07 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/27 17:49:53 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/28 15:09:32 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct stack
 	void	*img_player;
 	void	*img_exit;
 	char	**map_array;
+	char	**map_array_path;
 	int		rows;
 	int		columns;
 	int		wall;
@@ -47,6 +48,8 @@ typedef struct stack
 	int		collectible;
 	int		player;
 	int		exit;
+	int		player_x;
+	int		player_y;
 }			t_stack;
 
 /*check_args.c*/
@@ -72,5 +75,8 @@ void	check_miscellaneous(t_stack *stack);
 
 /*free_stack.c*/
 void	free_stack(t_stack *stack);
+
+/*check_map_path.c*/
+void	check_map_path(t_stack *stack);
 
 #endif

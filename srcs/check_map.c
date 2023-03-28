@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:33:20 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/27 17:58:33 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/28 12:04:39 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ void	fill_array(char *argv, t_stack *stack)
 	while (i < stack->rows)
 	{
 		line = get_next_line(fd);
+		if (!line)
+		{
+			free(line);
+			break ;
+		}
 		stack->map_array[i] = ft_strtrim(line, "\n");
 		free(line);
 		i++;

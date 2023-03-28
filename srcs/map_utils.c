@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:45:17 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/27 17:58:30 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/28 10:57:22 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	check_character(char **array, t_stack *stack)
 			else
 			{
 				write(1, "Map Error! Invalid Character Found!", 36);
-				free_stacks(stack);
+				free_stack(stack);
 				exit(1);
 			}
 		}

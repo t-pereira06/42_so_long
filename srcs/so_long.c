@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:14 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/27 17:52:26 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/28 15:19:07 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	init_stack(t_stack *stack)
 	stack->img_player = 0;
 	stack->img_exit = 0;
 	stack->map_array = 0;
+	stack->map_array_path = 0;
 	stack->rows = 0;
 	stack->columns = 0;
 	stack->wall = 0;
@@ -30,6 +31,8 @@ void	init_stack(t_stack *stack)
 	stack->collectible = 0;
 	stack->player = 0;
 	stack->exit = 0;
+	stack->player_x = 0;
+	stack->player_y = 0;
 }
 
 /*Main function of the program*/
@@ -40,5 +43,6 @@ int	main(int argc, char **argv)
 	check_args(argc, argv);
 	init_stack(&stack);
 	check_map(argv[1], &stack);
+	check_map_path(&stack);
 	free_stack(&stack);
 }

@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 10:01:44 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/20 09:37:04 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/28 11:00:15 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <fcntl.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10000
+#  define BUFFER_SIZE 50
 # endif
 
 char	*ft_strchr_utils(const char *s, int c);
