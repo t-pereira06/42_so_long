@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:07 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/28 16:38:44 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/29 11:02:09 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include "../libft/libft.h"
 # include "../mlx/mlx.h"
 
-# define SIZE 64
+# define SIZE 32
 # define PLAYER 'P'
 # define WALL '1'
 # define EXIT 'E'
@@ -33,14 +33,14 @@
 # define A 97
 # define S 115
 # define D 100
-# define WALL "./textures/wall.xpm"
-# define EMPTY "./textures/empty.xpm"
-# define PLAYER_W "./textures/playerfront.xpm"
-# define PLAYER_A "./textures/playerleft.xpm"
-# define PLAYER_S "./textures/playerback.xpm"
-# define PLAYER_D "./textures/playerright.xpm"
-# define COLLECTIBLE "./textures/collectible.xpm"
-# define EXIT "./textures/exit.xpm"
+# define WALL_IMG "../textures/wall.xpm"
+# define EMPTY_IMG "../textures/empty.xpm"
+# define PLAYER_W_IMG "../textures/player_w.xpm"
+# define PLAYER_A_IMG "../textures/player_a.xpm"
+# define PLAYER_S_IMG "../textures/player_s.xpm"
+# define PLAYER_D_IMG "../textures/player_d.xpm"
+# define COLLECTIBLE_IMG "../textures/collectible.xpm"
+# define EXIT_IMG "../textures/exit.xpm"
 
 
 /*Struct of the program*/
@@ -51,7 +51,10 @@ typedef struct stack
 	void	*img_wall;
 	void	*img_empty;
 	void	*img_collectible;
-	void	*img_player;
+	void	*img_player_w;
+	void	*img_player_a;
+	void	*img_player_s;
+	void	*img_player_d;
 	void	*img_exit;
 	char	**map_array;
 	char	**map_array_path;
@@ -92,5 +95,10 @@ void	free_stack(t_stack *stack);
 
 /*check_map_path.c*/
 void	check_map_path(t_stack *stack);
+
+/*window.c*/
+void	start_window(t_stack *stack);
+void	get_images(t_stack *stack);
+void	fill_window(t_stack *stack);
 
 #endif

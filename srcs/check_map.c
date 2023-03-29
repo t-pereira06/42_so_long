@@ -6,13 +6,13 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:33:20 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/28 12:04:39 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/29 10:46:22 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-/*Fill stack->map_array with the map from file*/
+/*Fill stack->map_array with the map from file.ber*/
 void	fill_array(char *argv, t_stack *stack)
 {
 	char	*line;

@@ -6,12 +6,13 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 12:25:35 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/28 16:38:42 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/29 11:02:48 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
+/*Fill a temporary map_array to use in flood_fill*/
 void	fill_map_path(t_stack *stack)
 {
 	int	i;
@@ -49,6 +50,7 @@ void	player_coordinates(t_stack *stack)
 	}
 }
 
+/*Function to check if a path exists*/
 int	flood_fill(t_stack *stack, char **map, int x, int y)
 {
 	static int	collectibles;
@@ -57,13 +59,13 @@ int	flood_fill(t_stack *stack, char **map, int x, int y)
 	if (y < 0 || x < 0 || y > stack->rows || x > stack->columns
 		|| map[y][x] == '1' || map[y][x] == 'X')
 		return (0);
-	if (map[y][x] == 'E')
+	if (map[y][x] == EXIT)
 	{
 		exits++;
 		map[y][x] = 'X';
 		return (0);
 	}
-	if (map[y][x] == 'C')
+	if (map[y][x] == COLLECTIBLE)
 		collectibles++;
 	map[y][x] = 'X';
 	flood_fill(stack, map, x + 1, y);
