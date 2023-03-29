@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:07 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/28 15:09:32 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/28 16:38:44 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,20 @@
 # define EXIT 'E'
 # define COLLECTIBLE 'C'
 # define EMPTY '0'
+# define ESC 65307
+# define W 119
+# define A 97
+# define S 115
+# define D 100
+# define WALL "./textures/wall.xpm"
+# define EMPTY "./textures/empty.xpm"
+# define PLAYER_W "./textures/playerfront.xpm"
+# define PLAYER_A "./textures/playerleft.xpm"
+# define PLAYER_S "./textures/playerback.xpm"
+# define PLAYER_D "./textures/playerright.xpm"
+# define COLLECTIBLE "./textures/collectible.xpm"
+# define EXIT "./textures/exit.xpm"
+
 
 /*Struct of the program*/
 typedef struct stack
