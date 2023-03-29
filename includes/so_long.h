@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:07 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/29 11:02:09 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/29 15:53:06 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@
 # define COLLECTIBLE_IMG "../textures/collectible.xpm"
 # define EXIT_IMG "../textures/exit.xpm"
 
-
 /*Struct of the program*/
 typedef struct stack
 {
@@ -58,6 +57,8 @@ typedef struct stack
 	void	*img_exit;
 	char	**map_array;
 	char	**map_array_path;
+	int		img_width;
+	int		img_height;
 	int		rows;
 	int		columns;
 	int		wall;
@@ -100,5 +101,9 @@ void	check_map_path(t_stack *stack);
 void	start_window(t_stack *stack);
 void	get_images(t_stack *stack);
 void	fill_window(t_stack *stack);
+
+/*handle_events.c*/
+//int	handle_exit(int keysysm, t_stack *stack);
+int	handle_esc(int keysys, t_stack *stack);
 
 #endif

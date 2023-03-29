@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:14 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/29 10:59:32 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/03/29 16:06:10 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	init_stack(t_stack *stack)
 	stack->img_exit = 0;
 	stack->map_array = 0;
 	stack->map_array_path = 0;
+	stack->img_width = 32;
+	stack->img_height = 32;
 	stack->rows = 0;
 	stack->columns = 0;
 	stack->wall = 0;
@@ -42,6 +44,8 @@ void	init_stack(t_stack *stack)
 void	start_window(t_stack *stack)
 {
 	stack->mlx_ptr = mlx_init();
+	stack->window_ptr = mlx_new_window(stack->mlx_ptr, 500, 500, "Ola");
+	mlx_hook(stack->window_ptr, KeyPress, KeyPressMask, &handle_esc, stack);
 	mlx_loop(stack->mlx_ptr);
 }
 

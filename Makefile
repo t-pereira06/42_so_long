@@ -6,7 +6,7 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 14:07:55 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/03/29 10:59:51 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/03/29 15:18:04 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,12 +22,12 @@ AR = ar rcs
 
 FILES = srcs/so_long.c srcs/check_args.c srcs/check_map.c \
 		srcs/check_map_path.c srcs/map_errors.c srcs/map_utils.c \
-		srcs/map_utils_2.c srcs/free_stack.c srcs/window.c
+		srcs/map_utils_2.c srcs/free_stack.c srcs/window.c srcs/handle_events.c
 
 OBJ = $(FILES:%.c=%.o)
 FILES_O = srcs/so_long.o srcs/check_args.o srcs/check_map.o \
 		srcs/check_map_path.o srcs/map_errors.o srcs/map_utils.o  \
-		srcs/map_utils_2.o srcs/free_stack.o srcs/window.o
+		srcs/map_utils_2.o srcs/free_stack.o srcs/window.o srcs/handle_events.o
 all: $(NAME)
 
 $(LIBFT):
