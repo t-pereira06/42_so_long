@@ -6,11 +6,28 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:14 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/29 16:30:53 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/04 14:48:58 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+void	print_map(t_stack *stack, char **map)
+{
+	int	i;
+	int	j;
+	i = 0;
+	while (i < stack->rows)
+	{
+		j = 0;
+		while (j < stack->columns)
+		{
+			printf("%c", map[i][j]);
+			j++;
+		}
+		printf("%s", "\n");
+		i++;
+	}
+}
 
 /*Start stacks*/
 void	init_stack(t_stack *stack)
@@ -26,9 +43,9 @@ void	init_stack(t_stack *stack)
 	stack->img_player_d = 0;
 	stack->img_exit = 0;
 	stack->map_array = 0;
-	stack->map_array_path = 0;
-	stack->img_width = 32;
-	stack->img_height = 32;
+	stack->check_path = 0;
+	stack->img_width = 24;
+	stack->img_height = 24;
 	stack->rows = 0;
 	stack->columns = 0;
 	stack->wall = 0;
@@ -40,24 +57,20 @@ void	init_stack(t_stack *stack)
 	stack->player_y = 0;
 }
 
-/*Start window of the program*/
-void	start_window(t_stack *stack)
-{
-	stack->mlx_ptr = mlx_init();
-	stack->window_ptr = mlx_new_window(stack->mlx_ptr, 500, 500, "Ola");
-	mlx_hook(stack->window_ptr, KeyPress, KeyPressMask, &handle_esc, stack);
-	mlx_loop(stack->mlx_ptr);
-}
-
 /*Main function of the program*/
 int	main(int argc, char **argv)
 {
 	t_stack		stack;
+	int	i;
+	int	j;
 
+	i = 0;
+	j = 0;
 	check_args(argc, argv);
 	init_stack(&stack);
 	check_map(argv[1], &stack);
-	check_map_path(&stack);
-	start_window(&stack);
-	free_stack(&stack);
+	check_map_path(&stack, argv[1]);
+	print_map(&stack, stack.map_array);
+	fill_window(&stack);
+	//free_stack(&stack);
 }

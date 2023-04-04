@@ -6,27 +6,53 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 12:25:35 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/29 11:02:48 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/04 14:28:16 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
 /*Fill a temporary map_array to use in flood_fill*/
-void	fill_map_path(t_stack *stack)
+void	fill_map_path(t_stack *stack, char *argv)
 {
-	int	i;
+	/*int	i;
 
 	i = 0;
-	stack->map_array_path = (char **)malloc(sizeof(char *) * (stack->rows + 1));
+	stack->check_path = (char **)malloc(sizeof(char *) * (stack->rows + 1));
 	while (i < stack->rows)
 	{
-		stack->map_array_path[i] = stack->map_array[i];
+		stack->check_path[i] = stack->map_array[i];
 		i++;
 	}
-	stack->map_array_path[i] = 0;
+	stack->check_path[i] = 0;*/
+	char	*line;
+	char	*path;
+	int		i;
+	int		fd;
+
+	i = 0;
+	line = 0;
+	stack->check_path = (char **)malloc(sizeof(char *) * (stack->rows + 1));
+	path = ft_strjoin("maps/", argv);
+	fd = open(path, O_RDONLY);
+	while (i < stack->rows)
+	{
+		line = get_next_line(fd);
+		if (!line)
+		{
+			free(line);
+			break ;
+		}
+		stack->check_path[i] = ft_strtrim(line, "\n");
+		free(line);
+		i++;
+	}
+	stack->check_path[i] = 0;
+	close(fd);
+	free(path);
 }
 
+/*Get player coordinates on the map*/
 void	player_coordinates(t_stack *stack)
 {
 	int	i;
@@ -80,16 +106,21 @@ int	flood_fill(t_stack *stack, char **map, int x, int y)
 
 /*Check if there is a valid path in the map.
 It means that the player can reach collectibles and exit.*/
-void	check_map_path(t_stack *stack)
+void	check_map_path(t_stack *stack, char *argv)
 {
-	fill_map_path(stack);
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	fill_map_path(stack, argv);
 	player_coordinates(stack);
-	if (flood_fill(stack, stack->map_array_path, stack->player_x, stack->player_y) == 0)
+	if (flood_fill(stack, stack->check_path, stack->player_x, stack->player_y) == 0)
 	{
 		write(1, "Map Error! Invalid Path!", 25);
-		free(stack->map_array_path);
-		free_stack(stack);
+		free(stack->check_path);
+		free_map(stack);
 		exit(1);
 	}
-	free(stack->map_array_path);
+	free(stack->check_path);
 }
