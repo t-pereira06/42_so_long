@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:14 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/04 14:48:58 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:05:13 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,6 @@ int	main(int argc, char **argv)
 	check_map(argv[1], &stack);
 	check_map_path(&stack, argv[1]);
 	print_map(&stack, stack.map_array);
-	fill_window(&stack);
+	start_window(&stack);
 	//free_stack(&stack);
 }
