@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:07 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/04 16:01:10 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/05 11:35:15 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@
 # define A 97
 # define S 115
 # define D 100
-# define WALL_IMG "../textures/wall.xpm"
-# define EMPTY_IMG "../textures/empty.xpm"
-# define PLAYER_W_IMG "../textures/player_w.xpm"
-# define PLAYER_A_IMG "../textures/player_a.xpm"
-# define PLAYER_S_IMG "../textures/player_s.xpm"
-# define PLAYER_D_IMG "../textures/player_d.xpm"
-# define COLLECTIBLE_IMG "../textures/collectible.xpm"
-# define EXIT_IMG "../textures/exit.xpm"
+# define WALL_IMG "textures/wall.xpm"
+# define EMPTY_IMG "textures/empty.xpm"
+# define PLAYER_W_IMG "textures/player_w.xpm"
+# define PLAYER_A_IMG "textures/player_a.xpm"
+# define PLAYER_S_IMG "textures/player_s.xpm"
+# define PLAYER_D_IMG "textures/player_d.xpm"
+# define COLLECTIBLE_IMG "textures/collectible.xpm"
+# define EXIT_IMG "textures/exit.xpm"
 
 /*Struct of the program*/
 typedef struct stack
@@ -71,6 +71,7 @@ typedef struct stack
 }			t_stack;
 
 /*check_args.c*/
+int	check_extension(char *arg);
 int		check_args(int arg_count, char **args);
 
 /*check_map.c*/
@@ -91,16 +92,23 @@ void	count_miscellaneous(t_stack *stack);
 /*map_utils_2.c*/
 void	check_miscellaneous(t_stack *stack);
 
-/*free_stack.c*/
+/*free.c*/
 void	free_map(t_stack *stack);
 void	free_stack(t_stack *stack);
+void	free_window(t_stack *stack);
+void	free_program(t_stack *stack);
+void	free_check_path(t_stack *stack);
 
 /*check_map_path.c*/
 void	check_map_path(t_stack *stack, char *argv);
+int		flood_fill(t_stack *stack, char **map, int x, int y);
+void	player_coordinates(t_stack *stack);
+void	fill_map_path(t_stack *stack, char *argv);
 
 /*window.c*/
 void	start_window(t_stack *stack);
 void	get_images(t_stack *stack);
+void	image_conditions(t_stack *stack, char miscellaneous, int x, int y);
 void	fill_window(t_stack *stack);
 
 /*handle_events.c*/

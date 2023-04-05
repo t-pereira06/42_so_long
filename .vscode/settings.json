@@ -2,6 +2,7 @@
 	"files.associations": {
 		"so_long.h": "c",
 		"stdlib.h": "c",
-		"string.h": "c"
+		"string.h": "c",
+		"libft.h": "c"
 	}
 }

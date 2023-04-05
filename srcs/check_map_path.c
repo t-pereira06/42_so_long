@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 12:25:35 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/04 14:28:16 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/05 11:40:52 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,6 @@
 /*Fill a temporary map_array to use in flood_fill*/
 void	fill_map_path(t_stack *stack, char *argv)
 {
-	/*int	i;
-
-	i = 0;
-	stack->check_path = (char **)malloc(sizeof(char *) * (stack->rows + 1));
-	while (i < stack->rows)
-	{
-		stack->check_path[i] = stack->map_array[i];
-		i++;
-	}
-	stack->check_path[i] = 0;*/
 	char	*line;
 	char	*path;
 	int		i;
@@ -115,12 +105,12 @@ void	check_map_path(t_stack *stack, char *argv)
 	j = 0;
 	fill_map_path(stack, argv);
 	player_coordinates(stack);
-	if (flood_fill(stack, stack->check_path, stack->player_x, stack->player_y) == 0)
+	if (flood_fill(
+			stack, stack->check_path, stack->player_x, stack->player_y) == 0)
 	{
 		write(1, "Map Error! Invalid Path!", 25);
-		free(stack->check_path);
+		free_check_path(stack);
 		free_map(stack);
 		exit(1);
 	}
-	free(stack->check_path);
 }

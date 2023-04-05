@@ -6,15 +6,18 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:14 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/04 16:05:13 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/05 11:40:12 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
+/*Test function*/
 void	print_map(t_stack *stack, char **map)
 {
 	int	i;
 	int	j;
+
 	i = 0;
 	while (i < stack->rows)
 	{
@@ -44,8 +47,8 @@ void	init_stack(t_stack *stack)
 	stack->img_exit = 0;
 	stack->map_array = 0;
 	stack->check_path = 0;
-	stack->img_width = 24;
-	stack->img_height = 24;
+	stack->img_width = 32;
+	stack->img_height = 32;
 	stack->rows = 0;
 	stack->columns = 0;
 	stack->wall = 0;
@@ -61,8 +64,8 @@ void	init_stack(t_stack *stack)
 int	main(int argc, char **argv)
 {
 	t_stack		stack;
-	int	i;
-	int	j;
+	int			i;
+	int			j;
 
 	i = 0;
 	j = 0;
@@ -72,5 +75,5 @@ int	main(int argc, char **argv)
 	check_map_path(&stack, argv[1]);
 	print_map(&stack, stack.map_array);
 	start_window(&stack);
-	//free_stack(&stack);
+	free_program(&stack);
 }
