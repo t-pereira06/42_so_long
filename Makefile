@@ -6,7 +6,7 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 14:07:55 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/04/05 11:19:01 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/04/06 11:53:38 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,14 +20,16 @@ RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 
-FILES = srcs/so_long.c srcs/check_args.c srcs/check_map.c \
-		srcs/check_map_path.c srcs/map_errors.c srcs/map_utils.c \
-		srcs/map_utils_2.c srcs/free.c srcs/window.c srcs/handle_events.c
+FILES = srcs/so_long.c srcs/args.c srcs/map.c \
+		srcs/map_path.c srcs/map_errors.c srcs/map_utils.c \
+		srcs/free.c srcs/window.c srcs/events.c srcs/moves.c \
+		srcs/moves_utils.c
 
 OBJ = $(FILES:%.c=%.o)
-FILES_O = srcs/so_long.o srcs/check_args.o srcs/check_map.o \
-		srcs/check_map_path.o srcs/map_errors.o srcs/map_utils.o  \
-		srcs/map_utils_2.o srcs/free.o srcs/window.o srcs/handle_events.o
+FILES_O = srcs/so_long.o srcs/args.o srcs/map.o \
+		srcs/map_path.o srcs/map_errors.o srcs/map_utils.o  \
+		srcs/free.o srcs/window.o srcs/events.o srcs/moves.o \
+		srcs/moves_utils.o
 all: $(NAME)
 
 $(LIBFT):

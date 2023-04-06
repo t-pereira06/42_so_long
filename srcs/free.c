@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 17:48:00 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/05 11:25:20 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/06 10:32:47 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,6 @@ void	free_stack(t_stack *stack)
 	free_map(stack);
 	free_check_path(stack);
 	free(stack->mlx_ptr);
-	free(stack->window_ptr);
-	free(stack->img_wall);
-	free(stack->img_empty);
-	free(stack->img_collectible);
-	free(stack->img_player_w);
-	free(stack->img_player_a);
-	free(stack->img_player_s);
-	free(stack->img_player_d);
-	free(stack->img_exit);
 }
 
 /*Function to free window*/
@@ -68,6 +59,7 @@ void	free_window(t_stack *stack)
 	mlx_destroy_image(stack->mlx_ptr, stack->img_player_s);
 	mlx_destroy_image(stack->mlx_ptr, stack->img_player_d);
 	mlx_destroy_image(stack->mlx_ptr, stack->img_exit);
+	mlx_destroy_image(stack->mlx_ptr, stack->img_collectible);
 	mlx_destroy_window(stack->mlx_ptr, stack->window_ptr);
 	mlx_destroy_display(stack->mlx_ptr);
 }
@@ -75,6 +67,6 @@ void	free_window(t_stack *stack)
 /*Function to free the whole program*/
 void	free_program(t_stack *stack)
 {
-	free_stack(stack);
 	free_window(stack);
+	free_stack(stack);
 }

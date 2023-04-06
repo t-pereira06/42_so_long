@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:07 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/05 11:35:15 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/06 11:45:23 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,6 @@ int		count_columns(char	*line);
 int		count_lines(char *argv);
 void	check_character(char **array, t_stack *stack);
 void	count_miscellaneous(t_stack *stack);
-
-/*map_utils_2.c*/
 void	check_miscellaneous(t_stack *stack);
 
 /*free.c*/
@@ -114,5 +112,12 @@ void	fill_window(t_stack *stack);
 /*handle_events.c*/
 //int	handle_exit(int keysysm, t_stack *stack);
 int	handle_esc(int keysys, t_stack *stack);
+
+/*moves.c*/
+void	change_images(t_stack *stack, int x, int y);
+void	player_position(t_stack *stack, int player_x, int player_y);
+int		check_next_miscellaneous(t_stack *stack, int x, int y);
+void	player_moves(t_stack *stack, char key);
+void	do_move(t_stack *stack, char key);
 
 #endif
