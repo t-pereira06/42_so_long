@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:07 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/06 12:39:57 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/06 12:47:34 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ typedef struct stack
 	int		exit;
 	int		player_x;
 	int		player_y;
+	int		count_c;
 }			t_stack;
 
 /*check_args.c*/

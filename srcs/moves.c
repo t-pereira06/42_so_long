@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 10:38:06 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/06 12:46:11 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/06 12:51:52 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,20 @@ void	player_position(t_stack *stack, int player_x, int player_y)
 according to the key pressed*/
 int	check_next_miscellaneous(t_stack *stack, int x, int y)
 {
-	static int	count_c;
-
-	count_c = 0;
 	if (stack->map_array[y][x] == WALL)
 		return (0);
-	if (stack->map_array[y][x] == EXIT && (count_c != stack->collectible))
+	if (stack->map_array[y][x] == EXIT && (stack->count_c != stack->collectible))
 		return (0);
 	if (stack->map_array[y][x] == COLLECTIBLE)
 	{
-		count_c++;
+		stack->count_c++;
 		ft_printf("%s", "Collectibles caught: ");
-		ft_printf("%i", count_c);
+		ft_printf("%i", stack->count_c);
 		return (1);
 	}
 	if (stack->map_array[y][x] == EMPTY)
 		return (1);
-	if (stack->map_array[y][x] == EXIT && (count_c == stack->collectible))
+	if (stack->map_array[y][x] == EXIT && (stack->count_c == stack->collectible))
 		free_program(stack);
 	return (0);
 }
