@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 10:38:06 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/06 12:51:52 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/06 15:17:30 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,51 +25,49 @@ int	check_next_miscellaneous(t_stack *stack, int x, int y)
 {
 	if (stack->map_array[y][x] == WALL)
 		return (0);
-	if (stack->map_array[y][x] == EXIT && (stack->count_c != stack->collectible))
+	if (stack->map_array[y][x] == EXIT
+		&& (stack->count_c != stack->collectible))
 		return (0);
 	if (stack->map_array[y][x] == COLLECTIBLE)
 	{
 		stack->count_c++;
-		ft_printf("%s", "Collectibles caught: ");
-		ft_printf("%i", stack->count_c);
 		return (1);
 	}
 	if (stack->map_array[y][x] == EMPTY)
 		return (1);
-	if (stack->map_array[y][x] == EXIT && (stack->count_c == stack->collectible))
+	if (stack->map_array[y][x] == EXIT
+		&& (stack->count_c == stack->collectible))
+	{
 		free_program(stack);
+		exit (0);
+	}
 	return (0);
 }
 
 /*Function to move the images and change player position*/
-void	do_move(t_stack *stack, char key)
+void	do_move(t_stack *stack, char key, int x, int y)
 {
-	int	x;
-	int	y;
-
-	x = stack->player_x;
-	y = stack->player_y;
 	if (key == 'W')
 	{
-		change_images_w(stack, x * 32, (y - 1) * 32, x * 32, y * 32);
+		change_images_w(stack, x * 32, (y - 1) * 32);
 		player_position(stack, x, y - 1);
 		stack->map_array[y][x] = EMPTY;
 	}
 	if (key == 'A')
 	{
-		change_images_a(stack, (x - 1) * 32, y * 32, x * 32, y * 32);
+		change_images_a(stack, (x - 1) * 32, y * 32);
 		player_position(stack, x - 1, y);
 		stack->map_array[y][x] = EMPTY;
 	}
 	if (key == 'S')
 	{
-		change_images_s(stack, x * 32, (y + 1) * 32, x * 32, y * 32);
+		change_images_s(stack, x * 32, (y + 1) * 32);
 		player_position(stack, x, y + 1);
 		stack->map_array[y][x] = EMPTY;
 	}
 	if (key == 'D')
 	{
-		change_images_d(stack, (x + 1) * 32, y * 32, x * 32, y * 32);
+		change_images_d(stack, (x + 1) * 32, y * 32);
 		player_position(stack, x + 1, y);
 		stack->map_array[y][x] = EMPTY;
 	}
@@ -86,15 +84,14 @@ void	player_moves(t_stack *stack, char key)
 	y = stack->player_y;
 	if (key == 'W')
 		if (check_next_miscellaneous(stack, x, y - 1) == 1)
-			do_move(stack, 'W');
+			do_move(stack, 'W', x, y);
 	if (key == 'A')
 		if (check_next_miscellaneous(stack, x - 1, y) == 1)
-			do_move(stack, 'A');
+			do_move(stack, 'A', x, y);
 	if (key == 'S')
 		if (check_next_miscellaneous(stack, x, y + 1) == 1)
-			do_move(stack, 'S');
+			do_move(stack, 'S', x, y);
 	if (key == 'D')
 		if (check_next_miscellaneous(stack, x + 1, y) == 1)
-			do_move(stack, 'D');
+			do_move(stack, 'D', x, y);
 }
-

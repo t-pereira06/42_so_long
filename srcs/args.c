@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_args.c                                       :+:      :+:    :+:   */
+/*   args.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 09:21:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/03/29 09:45:09 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/06 14:48:39 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ int	check_args(int arg_count, char **args)
 	fd = open(path, O_RDONLY);
 	if (check_extension(args[1]) != 1)
 	{
-		write(1, "Error\nInvalid file extension!", 31);
+		write(1, "Error\nInvalid file extension!", 30);
 		free(path);
 		exit(1);
 	}
 	else if (fd < 0)
 	{
-		write(1, "Error\nInvalid file!", 21);
+		write(1, "Error\nInvalid file!", 20);
 		free(path);
 		exit(1);
 	}

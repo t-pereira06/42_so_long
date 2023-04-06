@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:07 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/06 12:47:34 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/06 15:14:19 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ typedef struct stack
 	int		player_x;
 	int		player_y;
 	int		count_c;
+	int		moves;
 }			t_stack;
 
 /*check_args.c*/
@@ -78,6 +79,10 @@ int		check_args(int arg_count, char **args);
 /*check_map.c*/
 void	fill_array(char *argv, t_stack *stack);
 void	check_map(char *argv, t_stack *stack);
+
+/*handle_events.c*/
+int	handle_exit(t_stack *stack);
+int	handle_moves(int keysys, t_stack *stack);
 
 /*map_errors.c*/
 int		count_char_in_line(char **array, int num_rows, int num_cols);
@@ -110,21 +115,18 @@ void	get_images(t_stack *stack);
 void	image_conditions(t_stack *stack, char miscellaneous, int x, int y);
 void	fill_window(t_stack *stack);
 
-/*handle_events.c*/
-int	handle_exit(t_stack *stack);
-int	handle_moves(int keysys, t_stack *stack);
-
 /*moves.c*/
 void	change_images(t_stack *stack, int x, int y);
 void	player_position(t_stack *stack, int player_x, int player_y);
 int		check_next_miscellaneous(t_stack *stack, int x, int y);
 void	player_moves(t_stack *stack, char key);
-void	do_move(t_stack *stack, char key);
+//void	do_move(t_stack *stack, char key);
+void	do_move(t_stack *stack, char key, int x, int y);
 
 /*moves_utils.c*/
-void	change_images_w(t_stack *stack, int new_x, int new_y, int x, int y);
-void	change_images_a(t_stack *stack, int new_x, int new_y, int x, int y);
-void	change_images_s(t_stack *stack, int new_x, int new_y, int x, int y);
-void	change_images_d(t_stack *stack, int new_x, int new_y, int x, int y);
+void	change_images_w(t_stack *stack, int new_x, int new_y);
+void	change_images_a(t_stack *stack, int new_x, int new_y);
+void	change_images_s(t_stack *stack, int new_x, int new_y);
+void	change_images_d(t_stack *stack, int new_x, int new_y);
 
 #endif

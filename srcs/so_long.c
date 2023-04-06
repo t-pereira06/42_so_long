@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:14 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/06 12:18:04 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/06 15:09:11 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ void	init_stack(t_stack *stack)
 	stack->exit = 0;
 	stack->player_x = 0;
 	stack->player_y = 0;
+	stack->count_c = 0;
+	stack->moves = 0;
 }
 
 /*Main function of the program*/
