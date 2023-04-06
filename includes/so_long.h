@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:07 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/06 11:45:23 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/06 12:17:21 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,7 @@ void	fill_window(t_stack *stack);
 /*handle_events.c*/
 //int	handle_exit(int keysysm, t_stack *stack);
 int	handle_esc(int keysys, t_stack *stack);
+int	handle_moves(int keysys, t_stack *stack);
 
 /*moves.c*/
 void	change_images(t_stack *stack, int x, int y);
@@ -119,5 +120,11 @@ void	player_position(t_stack *stack, int player_x, int player_y);
 int		check_next_miscellaneous(t_stack *stack, int x, int y);
 void	player_moves(t_stack *stack, char key);
 void	do_move(t_stack *stack, char key);
+
+/*moves_utils.c*/
+void	change_images_w(t_stack *stack, int new_x, int new_y, int x, int y);
+void	change_images_a(t_stack *stack, int new_x, int new_y, int x, int y);
+void	change_images_s(t_stack *stack, int new_x, int new_y, int x, int y);
+void	change_images_d(t_stack *stack, int new_x, int new_y, int x, int y);
 
 #endif

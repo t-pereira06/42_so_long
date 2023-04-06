@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 10:21:09 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/06 10:38:00 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/06 12:19:05 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,6 @@ void	start_window(t_stack *stack)
 			stack->mlx_ptr, columns, rows, "so_long");
 	fill_window(stack);
 	mlx_hook(stack->window_ptr, KeyPress, KeyPressMask, &handle_esc, stack);
+	mlx_hook(stack->window_ptr, KeyPress, KeyPressMask, &handle_moves, stack);
 	mlx_loop(stack->mlx_ptr);
 }

@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 10:38:06 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/06 11:52:54 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/06 12:23:11 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 /*Function to change pplayer position in the stack*/
 void	player_position(t_stack *stack, int player_x, int player_y)
 {
-
+	stack->player_x = player_x;
+	stack->player_y = player_y;
 }
 
 /*Function to check with miscellaneous is next in the window,
@@ -38,6 +39,37 @@ int	check_next_miscellaneous(t_stack *stack, int x, int y)
 		return (1);
 	if (stack->map_array[y][x] == EXIT && (count_c == stack->collectible))
 		free_program(stack);
+	return (0);
+}
+
+/*Function to move the images and change player position*/
+void	do_move(t_stack *stack, char key)
+{
+	int	x;
+	int	y;
+
+	x = stack->player_x;
+	y = stack->player_y;
+	if (key == 'W')
+	{
+		change_images_w(stack, x * 32, (y - 1) * 32, x * 32, y * 32);
+		player_position(stack, x, y - 1);
+	}
+	if (key == 'A')
+	{
+		change_images_a(stack, (x - 1) * 32, y * 32, x * 32, y * 32);
+		player_position(stack, x - 1, y);
+	}
+	if (key == 'S')
+	{
+		change_images_s(stack, x * 32, (y + 1) * 32, x * 32, y * 32);
+		player_position(stack, x, y + 1);
+	}
+	if (key == 'D')
+	{
+		change_images_d(stack, (x + 1) * 32, y * 32, x * 32, y * 32);
+		player_position(stack, x + 1, y);
+	}
 }
 
 /*Function to check which key was pressed and then
@@ -63,32 +95,3 @@ void	player_moves(t_stack *stack, char key)
 			do_move(stack, 'D');
 }
 
-/*Function to move the images and change player position*/
-void	do_move(t_stack *stack, char key)
-{
-	int	x;
-	int	y;
-
-	x = stack->player_x;
-	y = stack->player_y;
-	if (key == 'W')
-	{
-		change_images_w(stack, x, y - 32, x, y);
-		player_position(stack, x, y - 1);
-	}
-	if (key == 'A')
-	{
-		change_images_a(stack, x, y - 32, x, y);
-		player_position(stack, x, y - 32);
-	}
-	if (key == 'S')
-	{
-		change_images_s(stack, x, y + 32, x, y);
-		player_position(stack, x, y + 1);
-	}
-	if (key == 'D')
-	{
-		change_images_d(stack, x + 32, y, x, y);
-		player_position(stack, x + 1, y);
-	}
-}
