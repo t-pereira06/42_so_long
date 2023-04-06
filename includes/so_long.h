@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:07 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/06 12:17:21 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/06 12:34:42 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,8 +110,7 @@ void	image_conditions(t_stack *stack, char miscellaneous, int x, int y);
 void	fill_window(t_stack *stack);
 
 /*handle_events.c*/
-//int	handle_exit(int keysysm, t_stack *stack);
-int	handle_esc(int keysys, t_stack *stack);
+int	handle_exit(t_stack *stack);
 int	handle_moves(int keysys, t_stack *stack);
 
 /*moves.c*/
