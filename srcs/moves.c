@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 10:38:06 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/06 12:23:11 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/06 12:46:11 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int	check_next_miscellaneous(t_stack *stack, int x, int y)
 	if (stack->map_array[y][x] == COLLECTIBLE)
 	{
 		count_c++;
+		ft_printf("%s", "Collectibles caught: ");
+		ft_printf("%i", count_c);
 		return (1);
 	}
 	if (stack->map_array[y][x] == EMPTY)
@@ -54,21 +56,25 @@ void	do_move(t_stack *stack, char key)
 	{
 		change_images_w(stack, x * 32, (y - 1) * 32, x * 32, y * 32);
 		player_position(stack, x, y - 1);
+		stack->map_array[y][x] = EMPTY;
 	}
 	if (key == 'A')
 	{
 		change_images_a(stack, (x - 1) * 32, y * 32, x * 32, y * 32);
 		player_position(stack, x - 1, y);
+		stack->map_array[y][x] = EMPTY;
 	}
 	if (key == 'S')
 	{
 		change_images_s(stack, x * 32, (y + 1) * 32, x * 32, y * 32);
 		player_position(stack, x, y + 1);
+		stack->map_array[y][x] = EMPTY;
 	}
 	if (key == 'D')
 	{
 		change_images_d(stack, (x + 1) * 32, y * 32, x * 32, y * 32);
 		player_position(stack, x + 1, y);
+		stack->map_array[y][x] = EMPTY;
 	}
 }
 
