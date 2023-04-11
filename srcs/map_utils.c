@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:45:17 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/06 10:37:00 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/11 09:20:03 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	check_character(char **array, t_stack *stack)
 			}
 			else
 			{
-				write(1, "Map Error! Invalid Character Found!", 36);
+				write(1, "Map Error! Invalid Character Found!\n", 37);
 				free_map(stack);
 				exit(1);
 			}
@@ -113,19 +113,19 @@ void	check_miscellaneous(t_stack *stack)
 	count_miscellaneous(stack);
 	if (stack->player != 1)
 	{
-		write(1, "The map needs to have 1 Player only!", 37);
+		write(1, "The map needs to have 1 Player only!\n", 38);
 		free_map(stack);
 		exit(1);
 	}
 	else if (stack->exit != 1)
 	{
-		write(1, "The map needs to have 1 Exit only!", 35);
+		write(1, "The map needs to have 1 Exit only!\n", 36);
 		free_map(stack);
 		exit(1);
 	}
 	else if (stack->collectible < 1)
 	{
-		write(1, "The map needs to have 1 or more Collectibles!", 46);
+		write(1, "The map needs to have 1 or more Collectibles!\n", 47);
 		free_map(stack);
 		exit(1);
 	}

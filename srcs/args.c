@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 09:21:39 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/06 14:48:39 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/11 09:19:01 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	check_extension(char *arg)
 	char	*ext;
 
 	ext = ft_strrchr(arg, '.');
+	if (ext == NULL)
+		return (0);
 	if (!(ext[0] == '.') || !(ext[1] == 'b') \
 	|| !(ext[2] == 'e') || !(ext[3] == 'r'))
 		return (0);
@@ -32,20 +34,20 @@ int	check_args(int arg_count, char **args)
 
 	if (arg_count != 2)
 	{
-		write(1, "Error\nRun program: ./so_long <map_name.ber>", 44);
+		write(1, "Error\nRun program: ./so_long <map_name.ber>\n", 45);
 		exit(1);
 	}
 	path = ft_strjoin("maps/", args[1]);
 	fd = open(path, O_RDONLY);
 	if (check_extension(args[1]) != 1)
 	{
-		write(1, "Error\nInvalid file extension!", 30);
+		write(1, "Error\nInvalid file extension!\n", 31);
 		free(path);
 		exit(1);
 	}
 	else if (fd < 0)
 	{
-		write(1, "Error\nInvalid file!", 20);
+		write(1, "Error\nInvalid file!\n", 21);
 		free(path);
 		exit(1);
 	}

@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 12:25:35 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/06 12:06:00 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/11 09:19:33 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ void	check_map_path(t_stack *stack, char *argv)
 	if (flood_fill(
 			stack, stack->check_path, stack->player_x, stack->player_y) == 0)
 	{
-		write(1, "Map Error! Invalid Path!", 25);
+		write(1, "Map Error! Invalid Path!\n", 26);
 		free_check_path(stack);
 		free_map(stack);
 		exit(1);
