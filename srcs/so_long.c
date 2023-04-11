@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:14 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/06 15:20:59 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/11 09:06:48 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,6 @@ void	init_stack(t_stack *stack)
 int	main(int argc, char **argv)
 {
 	t_stack		stack;
-	int			i;
-	int			j;
-
-	i = 0;
-	j = 0;
 	check_args(argc, argv);
 	init_stack(&stack);
 	check_map(argv[1], &stack);
