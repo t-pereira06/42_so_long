@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 12:08:07 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/11 10:41:23 by tsodre-p         ###   ########.fr       */
+/*   Created: 2023/04/11 10:39:13 by tsodre-p          #+#    #+#             */
+/*   Updated: 2023/04/11 11:02:20 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 
 # include <string.h>
 # include <stdlib.h>
@@ -28,6 +28,7 @@
 # define EXIT 'E'
 # define COLLECTIBLE 'C'
 # define EMPTY '0'
+# define ENEMY 'I'
 # define ESC 65307
 # define W 119
 # define A 97
@@ -41,6 +42,7 @@
 # define PLAYER_D_IMG "textures/player_d.xpm"
 # define COLLECTIBLE_IMG "textures/collectible.xpm"
 # define EXIT_IMG "textures/exit.xpm"
+# define ENEMY_IMG "textures/enemy.xpm"
 
 /*Struct of the program*/
 typedef struct stack
@@ -55,6 +57,7 @@ typedef struct stack
 	void	*img_player_s;
 	void	*img_player_d;
 	void	*img_exit;
+	void	*img_enemy;
 	char	**map_array;
 	char	**check_path;
 	int		img_width;
