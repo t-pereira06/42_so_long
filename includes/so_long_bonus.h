@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:39:13 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/12 14:31:57 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/12 14:59:34 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@
 # define PLAYER_A_IMG "textures/bonus/player_a.xpm"
 # define PLAYER_S_IMG "textures/bonus/player_s.xpm"
 # define PLAYER_D_IMG "textures/bonus/player_d.xpm"
-# define COLLECTIBLE_1_IMG  "textures/bonus/collectible_1.xpm"
-# define COLLECTIBLE_2_IMG "textures/bonus/collectible_2.xpm"
+# define COLLECTIBLE_1_IMG  "textures/bonus/coin_1.xpm"
+# define COLLECTIBLE_2_IMG "textures/bonus/coin_2.xpm"
 # define EXIT_IMG "textures/bonus/exit.xpm"
 # define ENEMY_IMG "textures/bonus/enemy.xpm"
 
@@ -138,6 +138,7 @@ void	change_images_d(t_stack *stack, int new_x, int new_y);
 int		enemy_position(t_stack *stack, int random_move);
 int		check_next_window(t_stack *stack, int x, int y);
 void	enemy_move(t_stack *stack, int x, int y, int random_move);
+int		animations(t_stack *stack);
 
 /*enemies_utils.c*/
 void	collectible_animation(t_stack *stack, int flag);
