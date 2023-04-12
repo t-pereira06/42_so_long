@@ -31,6 +31,7 @@ $ make bonus
 After compiling, execute the program, followed by the map:
 ```bash
 $ ./so_long <map_name>.ber
+$ ./so_long_bonus <map_name>.ber
 ```
 After playing the game, if you want to clean the object files, execute:
 ```bash
