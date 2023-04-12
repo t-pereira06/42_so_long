@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:52:59 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/12 14:22:43 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/12 15:02:56 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int	animations(t_stack *stack)
 	static int	i;
 	int			num;
 
-	num = 15000;
+	num = 20000;
 	i++;
 	if (i == num * 2)
 		collectible_animation(stack, 0);
