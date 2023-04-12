@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:39:13 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/12 14:59:34 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/12 15:25:11 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,6 @@ void	enemy_move(t_stack *stack, int x, int y, int random_move);
 int		animations(t_stack *stack);
 
 /*enemies_utils.c*/
-void	collectible_animation(t_stack *stack, int flag);
 void	change_enemy_image_w(t_stack *stack, int x, int y);
 void	change_enemy_image_a(t_stack *stack, int x, int y);
 void	change_enemy_image_s(t_stack *stack, int x, int y);
@@ -149,5 +148,6 @@ void	change_enemy_image_d(t_stack *stack, int x, int y);
 
 /*sprites.c*/
 void	change_collectible(t_stack *stack, int x, int y, int flag);
+void	collectible_animation(t_stack *stack, int flag);
 
 #endif
