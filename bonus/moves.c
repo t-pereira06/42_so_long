@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 10:38:06 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/11 10:54:54 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/12 14:33:21 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ int	check_next_miscellaneous(t_stack *stack, int x, int y)
 {
 	if (stack->map_array[y][x] == WALL)
 		return (0);
+	if (stack->map_array[y][x] == ENEMY)
+	{
+		free_program(stack);
+		exit (0);
+	}
 	if (stack->map_array[y][x] == EXIT
 		&& (stack->count_c != stack->collectible))
 		return (0);
@@ -38,6 +43,7 @@ int	check_next_miscellaneous(t_stack *stack, int x, int y)
 	if (stack->map_array[y][x] == EXIT
 		&& (stack->count_c == stack->collectible))
 	{
+		write(1, "Congratulations! You passed the map! 🎉\n", 43);
 		free_program(stack);
 		exit (0);
 	}

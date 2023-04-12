@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 10:21:09 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/11 11:02:56 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/12 14:32:15 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ void	get_images(t_stack *stack)
 			stack->mlx_ptr, WALL_IMG, width, height);
 	stack->img_empty = mlx_xpm_file_to_image(
 			stack->mlx_ptr, EMPTY_IMG, width, height);
-	stack->img_collectible = mlx_xpm_file_to_image(
-			stack->mlx_ptr, COLLECTIBLE_IMG, width, height);
+	stack->img_c_1 = mlx_xpm_file_to_image(
+			stack->mlx_ptr, COLLECTIBLE_1_IMG, width, height);
+		stack->img_c_2 = mlx_xpm_file_to_image(
+			stack->mlx_ptr, COLLECTIBLE_2_IMG, width, height);
 	stack->img_player_w = mlx_xpm_file_to_image(
 			stack->mlx_ptr, PLAYER_W_IMG, width, height);
 	stack->img_player_a = mlx_xpm_file_to_image(
@@ -36,18 +38,13 @@ void	get_images(t_stack *stack)
 			stack->mlx_ptr, PLAYER_D_IMG, width, height);
 	stack->img_exit = mlx_xpm_file_to_image(
 			stack->mlx_ptr, EXIT_IMG, width, height);
-	stack->img_enemy = mlx_xpm_file_to_image(
+	stack->img_i = mlx_xpm_file_to_image(
 			stack->mlx_ptr, ENEMY_IMG, width, height);
 }
 
 /*Fill window with the images of the map*/
-void	fill_window(t_stack *stack)
+void	fill_window(t_stack *stack, int i, int j)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
 	while (i < stack->rows)
 	{
 		j = 0;
@@ -63,12 +60,15 @@ void	fill_window(t_stack *stack)
 				image_conditions(stack, PLAYER, j * 32, i * 32);
 			if (stack->map_array[i][j] == EXIT)
 				image_conditions(stack, EXIT, j * 32, i * 32);
+			if (stack->map_array[i][j] == ENEMY)
+				image_conditions(stack, ENEMY, j * 32, i * 32);
 			j++;
 		}
 		i++;
 	}
 }
 
+/*Print images on the window*/
 void	image_conditions(t_stack *stack, char miscellaneous, int x, int y)
 {
 	if (miscellaneous == WALL)
@@ -79,13 +79,16 @@ void	image_conditions(t_stack *stack, char miscellaneous, int x, int y)
 			stack->mlx_ptr, stack->window_ptr, stack->img_empty, x, y);
 	if (miscellaneous == COLLECTIBLE)
 		mlx_put_image_to_window(
-			stack->mlx_ptr, stack->window_ptr, stack->img_collectible, x, y);
+			stack->mlx_ptr, stack->window_ptr, stack->img_c_1, x, y);
 	if (miscellaneous == PLAYER)
 		mlx_put_image_to_window(
 			stack->mlx_ptr, stack->window_ptr, stack->img_player_w, x, y);
 	if (miscellaneous == EXIT)
 		mlx_put_image_to_window(
 			stack->mlx_ptr, stack->window_ptr, stack->img_exit, x, y);
+	if (miscellaneous == ENEMY)
+		mlx_put_image_to_window(
+			stack->mlx_ptr, stack->window_ptr, stack->img_i, x, y);
 }
 
 /*Start window of the program*/
@@ -100,9 +103,10 @@ void	start_window(t_stack *stack)
 	get_images(stack);
 	stack->window_ptr = mlx_new_window(
 			stack->mlx_ptr, columns, rows, "so_long");
-	fill_window(stack);
+	fill_window(stack, 0, 0);
 	mlx_hook(stack->window_ptr, KeyPress, KeyPressMask, &handle_moves, stack);
 	mlx_hook(
 		stack->window_ptr, DestroyNotify, ButtonPressMask, &handle_exit, stack);
+	//mlx_loop_hook(stack->mlx_ptr, enemy_animation, &stack);
 	mlx_loop(stack->mlx_ptr);
 }

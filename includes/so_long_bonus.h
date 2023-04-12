@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:39:13 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/11 11:02:20 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/12 14:31:57 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,16 @@
 # define A 97
 # define S 115
 # define D 100
-# define WALL_IMG "textures/wall.xpm"
-# define EMPTY_IMG "textures/empty.xpm"
-# define PLAYER_W_IMG "textures/player_w.xpm"
-# define PLAYER_A_IMG "textures/player_a.xpm"
-# define PLAYER_S_IMG "textures/player_s.xpm"
-# define PLAYER_D_IMG "textures/player_d.xpm"
-# define COLLECTIBLE_IMG "textures/collectible.xpm"
-# define EXIT_IMG "textures/exit.xpm"
-# define ENEMY_IMG "textures/enemy.xpm"
+# define WALL_IMG "textures/bonus/wall.xpm"
+# define EMPTY_IMG "textures/bonus/empty.xpm"
+# define PLAYER_W_IMG "textures/bonus/player_w.xpm"
+# define PLAYER_A_IMG "textures/bonus/player_a.xpm"
+# define PLAYER_S_IMG "textures/bonus/player_s.xpm"
+# define PLAYER_D_IMG "textures/bonus/player_d.xpm"
+# define COLLECTIBLE_1_IMG  "textures/bonus/collectible_1.xpm"
+# define COLLECTIBLE_2_IMG "textures/bonus/collectible_2.xpm"
+# define EXIT_IMG "textures/bonus/exit.xpm"
+# define ENEMY_IMG "textures/bonus/enemy.xpm"
 
 /*Struct of the program*/
 typedef struct stack
@@ -51,13 +52,14 @@ typedef struct stack
 	void	*window_ptr;
 	void	*img_wall;
 	void	*img_empty;
-	void	*img_collectible;
+	void	*img_c_1;
+	void	*img_c_2;
 	void	*img_player_w;
 	void	*img_player_a;
 	void	*img_player_s;
 	void	*img_player_d;
 	void	*img_exit;
-	void	*img_enemy;
+	void	*img_i;
 	char	**map_array;
 	char	**check_path;
 	int		img_width;
@@ -116,7 +118,7 @@ void	fill_map_path(t_stack *stack, char *argv);
 void	start_window(t_stack *stack);
 void	get_images(t_stack *stack);
 void	image_conditions(t_stack *stack, char miscellaneous, int x, int y);
-void	fill_window(t_stack *stack);
+void	fill_window(t_stack *stack, int i, int j);
 
 /*moves.c*/
 void	change_images(t_stack *stack, int x, int y);
@@ -131,5 +133,20 @@ void	change_images_w(t_stack *stack, int new_x, int new_y);
 void	change_images_a(t_stack *stack, int new_x, int new_y);
 void	change_images_s(t_stack *stack, int new_x, int new_y);
 void	change_images_d(t_stack *stack, int new_x, int new_y);
+
+/*enemies.c*/
+int		enemy_position(t_stack *stack, int random_move);
+int		check_next_window(t_stack *stack, int x, int y);
+void	enemy_move(t_stack *stack, int x, int y, int random_move);
+
+/*enemies_utils.c*/
+void	collectible_animation(t_stack *stack, int flag);
+void	change_enemy_image_w(t_stack *stack, int x, int y);
+void	change_enemy_image_a(t_stack *stack, int x, int y);
+void	change_enemy_image_s(t_stack *stack, int x, int y);
+void	change_enemy_image_d(t_stack *stack, int x, int y);
+
+/*sprites.c*/
+void	change_collectible(t_stack *stack, int x, int y, int flag);
 
 #endif

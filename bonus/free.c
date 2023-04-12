@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 17:48:00 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/11 10:54:03 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/12 14:34:13 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,9 @@ void	free_window(t_stack *stack)
 	mlx_destroy_image(stack->mlx_ptr, stack->img_player_s);
 	mlx_destroy_image(stack->mlx_ptr, stack->img_player_d);
 	mlx_destroy_image(stack->mlx_ptr, stack->img_exit);
-	mlx_destroy_image(stack->mlx_ptr, stack->img_collectible);
-	mlx_destroy_image(stack->mlx_ptr, stack->img_enemy);
+	mlx_destroy_image(stack->mlx_ptr, stack->img_c_1);
+	mlx_destroy_image(stack->mlx_ptr, stack->img_c_2);
+	mlx_destroy_image(stack->mlx_ptr, stack->img_i);
 	mlx_destroy_window(stack->mlx_ptr, stack->window_ptr);
 	mlx_destroy_display(stack->mlx_ptr);
 }

@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:08:14 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/11 11:02:31 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/12 14:31:46 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,16 @@ void	print_map(t_stack *stack, char **map)
 /*Start stacks*/
 void	init_stack(t_stack *stack)
 {
-	stack->mlx_ptr = 0;
-	stack->window_ptr = 0;
 	stack->img_wall = 0;
 	stack->img_empty = 0;
-	stack->img_collectible = 0;
+	stack->img_c_1 = 0;
+	stack->img_c_2 = 0;
 	stack->img_player_w = 0;
 	stack->img_player_a = 0;
 	stack->img_player_s = 0;
 	stack->img_player_d = 0;
 	stack->img_exit = 0;
-	stack->img_enemy = 0;
+	stack->img_i = 0;
 	stack->map_array = 0;
 	stack->check_path = 0;
 	stack->img_width = 32;
@@ -67,7 +66,10 @@ void	init_stack(t_stack *stack)
 int	main(int argc, char **argv)
 {
 	t_stack		stack;
+
 	check_args(argc, argv);
+	stack.mlx_ptr = 0;
+	stack.window_ptr = 0;
 	init_stack(&stack);
 	check_map(argv[1], &stack);
 	check_map_path(&stack, argv[1]);

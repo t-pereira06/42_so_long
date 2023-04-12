@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 10:21:09 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/06 15:16:16 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/11 13:57:28 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void	fill_window(t_stack *stack)
 	}
 }
 
+/*Print images on the window*/
 void	image_conditions(t_stack *stack, char miscellaneous, int x, int y)
 {
 	if (miscellaneous == WALL)

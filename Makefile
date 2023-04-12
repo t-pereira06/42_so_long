@@ -6,7 +6,7 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 14:07:55 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/04/11 10:52:51 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/04/12 14:23:24 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ FILES = mandatory/so_long.c mandatory/args.c mandatory/map.c \
 FILES_BONUS = bonus/so_long.c bonus/args.c bonus/map.c \
 		bonus/map_path.c bonus/map_errors.c bonus/map_utils.c \
 		bonus/free.c bonus/window.c bonus/events.c bonus/moves.c \
-		bonus/moves_utils.c
+		bonus/moves_utils.c bonus/enemies.c bonus/enemies_utils.c bonus/sprites.c
 
 OBJ = $(FILES:%.c=%.o)
 OBJ_BONUS = $(FILES_BONUS:%.c=%.o)
@@ -41,7 +41,7 @@ FILES_O = mandatory/so_long.o mandatory/args.o mandatory/map.o \
 FILES_O_BONUS = bonus/so_long.o bonus/args.o bonus/map.o \
 		bonus/map_path.o bonus/map_errors.o bonus/map_utils.o  \
 		bonus/free.o bonus/window.o bonus/events.o bonus/moves.o \
-		bonus/moves_utils.o
+		bonus/moves_utils.o bonus/enemies.o bonus/enemies_utils.o bonus/sprites.o
 all: $(NAME)
 
 $(LIBFT):
