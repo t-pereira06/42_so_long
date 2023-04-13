@@ -6,17 +6,18 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 10:38:06 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/12 14:33:21 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/13 11:46:35 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long_bonus.h"
 
-/*Function to change pplayer position in the stack*/
+/*Function to change player position in the stack*/
 void	player_position(t_stack *stack, int player_x, int player_y)
 {
 	stack->player_x = player_x;
 	stack->player_y = player_y;
+	stack->map_array[player_y][player_x] = PLAYER;
 }
 
 /*Function to check with miscellaneous is next in the window,
@@ -27,6 +28,7 @@ int	check_next_miscellaneous(t_stack *stack, int x, int y)
 		return (0);
 	if (stack->map_array[y][x] == ENEMY)
 	{
+		write(1, "You Died 🔪 Good luck next time!", 35);
 		free_program(stack);
 		exit (0);
 	}
