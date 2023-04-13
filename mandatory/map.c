@@ -25,7 +25,7 @@ void	fill_array(char *argv, t_stack *stack)
 	stack->map_array = (char **)malloc(sizeof(char *) * (stack->rows + 1));
 	path = ft_strjoin("maps/", argv);
 	fd = open(path, O_RDONLY);
-	while (i < stack->rows)
+	while (1)
 	{
 		line = get_next_line(fd);
 		if (!line)
