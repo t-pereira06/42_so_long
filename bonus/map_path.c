@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 12:25:35 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/13 15:30:15 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/14 10:32:05 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,11 +98,6 @@ int	flood_fill(t_stack *stack, char **map, int x, int y)
 It means that the player can reach collectibles and exit.*/
 void	check_map_path(t_stack *stack, char *argv)
 {
-	//int	i;
-	//int	j;
-
-	//i = 0;
-	//j = 0;
 	fill_map_path(stack, argv);
 	player_coordinates(stack);
 	if (flood_fill(

@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 10:38:06 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/13 11:46:35 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/14 10:37:17 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ int	check_next_miscellaneous(t_stack *stack, int x, int y)
 	if (stack->map_array[y][x] == ENEMY)
 	{
 		write(1, "You Died 🔪 Good luck next time!", 35);
-		free_program(stack);
-		exit (0);
+		close_program(stack);
 	}
 	if (stack->map_array[y][x] == EXIT
 		&& (stack->count_c != stack->collectible))
@@ -46,8 +45,7 @@ int	check_next_miscellaneous(t_stack *stack, int x, int y)
 		&& (stack->count_c == stack->collectible))
 	{
 		write(1, "Congratulations! You passed the map! 🎉\n", 43);
-		free_program(stack);
-		exit (0);
+		close_program(stack);
 	}
 	return (0);
 }
@@ -102,4 +100,11 @@ void	player_moves(t_stack *stack, char key)
 	if (key == 'D')
 		if (check_next_miscellaneous(stack, x + 1, y) == 1)
 			do_move(stack, 'D', x, y);
+}
+
+/*Function to save lines for function check_next_miscellaneous*/
+void	close_program(t_stack *stack)
+{
+	free_program(stack);
+	exit (0);
 }

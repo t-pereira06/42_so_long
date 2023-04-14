@@ -6,12 +6,11 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 12:49:01 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/13 10:00:18 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/14 10:32:14 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long_bonus.h"
-
 
 /*Function to use mlx in the window to change image*/
 void	change_collectible(t_stack *stack, int x, int y, int flag)

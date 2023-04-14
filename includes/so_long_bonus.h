@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:39:13 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/13 11:03:26 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/14 10:35:31 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,12 +121,12 @@ void	image_conditions(t_stack *stack, char miscellaneous, int x, int y);
 void	fill_window(t_stack *stack, int i, int j);
 
 /*moves.c*/
-void	change_images(t_stack *stack, int x, int y);
+//void	change_images(t_stack *stack, int x, int y);
 void	player_position(t_stack *stack, int player_x, int player_y);
 int		check_next_miscellaneous(t_stack *stack, int x, int y);
 void	player_moves(t_stack *stack, char key);
-//void	do_move(t_stack *stack, char key);
 void	do_move(t_stack *stack, char key, int x, int y);
+void	close_program(t_stack *stack);
 
 /*moves_utils.c*/
 void	change_images_w(t_stack *stack, int new_x, int new_y);
@@ -149,7 +149,5 @@ void	change_enemy_image_d(t_stack *stack, int x, int y);
 /*sprites.c*/
 void	change_collectible(t_stack *stack, int x, int y, int flag);
 void	collectible_animation(t_stack *stack, int flag);
-
-void	print_map(t_stack *stack, char **map);
 
 #endif
