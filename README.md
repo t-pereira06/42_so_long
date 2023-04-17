@@ -38,25 +38,6 @@ After playing the game, if you want to clean the object files, execute:
 $ make fclean
 
 ```
-## Requirements of evaluation:
-
-Sorting 3 values: no more than 3 moves.
-
-Sorting 5 values: no more than 12 moves.
-
-Sorting 100 values: rating from 1 to 5 points depending on the number of moves:
-   - 5 points for less than 700
-   - 4 points for less than 900
-   - 3 points for less than 1100
-   - 2 points for less than 1300
-   - 1 point for less than 1500
-
-Sorting 500 values: rating from 1 to 5 points depending on the number of moves:
-   - 5 points for less than 5500
-   - 4 points for less than 7000
-   - 3 points for less than 8500
-   - 2 points for less than 10000
-   - 1 point for less than 11500
 
 ## Controls 🎮
 
@@ -67,4 +48,11 @@ Sorting 500 values: rating from 1 to 5 points depending on the number of moves:
 |`S`, ⬇️|DOWN|
 |`D`, ➡️|RIGHT|
 
-## Grade:
+## Gameplay
+Mandatory:
+![simplescreenrecorder-2023-04-17_15 04 52](https://user-images.githubusercontent.com/118270669/232509337-65d77d14-2625-4e7e-8e16-012988998535.gif)
+Bonus:
+![simplescreenrecorder-2023-04-17_15 06 18](https://user-images.githubusercontent.com/118270669/232509272-58d16ea3-e8fc-4149-8839-1db7790c4501.gif)
+
+
+
