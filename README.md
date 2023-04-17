@@ -39,6 +39,9 @@ $ make fclean
 
 ```
 
+##Video Examples:
+[simplescreenrecorder-2023-04-17_14.46.17.webm]
+
 ## Controls 🎮
 
 |Key|Action|
@@ -49,3 +52,4 @@ $ make fclean
 |`D`, ➡️|RIGHT|
 
 ## Grade:
+(https://user-images.githubusercontent.com/118270669/232503457-4859a486-8188-49e9-be82-ae228e1f8b22.webm)
