@@ -38,7 +38,7 @@ After playing the game, if you want to clean the object files, execute:
 $ make fclean
 
 ```
-## Requirements:
+## Requirements of evaluation:
 
 Sorting 3 values: no more than 3 moves.
 
