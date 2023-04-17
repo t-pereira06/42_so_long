@@ -49,7 +49,9 @@ $ make fclean
 |`D`, ➡️|RIGHT|
 
 ## Gameplay
+Mandatory:
 ![simplescreenrecorder-2023-04-17_15 04 52](https://user-images.githubusercontent.com/118270669/232509337-65d77d14-2625-4e7e-8e16-012988998535.gif)
+Bonus:
 ![simplescreenrecorder-2023-04-17_15 06 18](https://user-images.githubusercontent.com/118270669/232509272-58d16ea3-e8fc-4149-8839-1db7790c4501.gif)
 
 
