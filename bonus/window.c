@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 10:21:09 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/13 09:52:04 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/17 12:18:52 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,10 @@ void	fill_window(t_stack *stack, int i, int j)
 		}
 		i++;
 	}
+	mlx_string_put(
+		stack->mlx_ptr, stack->window_ptr, 10, 15, 000000, "Moves:  ");
+	mlx_string_put(
+		stack->mlx_ptr, stack->window_ptr, 50, 15, 000000,"0");
 }
 
 /*Print images on the window*/

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_map.c                                        :+:      :+:    :+:   */
+/*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:33:20 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/04 13:39:49 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/17 10:22:00 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	fill_array(char *argv, t_stack *stack)
 	i = 0;
 	line = 0;
 	stack->map_array = (char **)malloc(sizeof(char *) * (stack->rows + 1));
-	path = ft_strjoin("maps/", argv);
+	path = ft_strjoin("maps/mandatory/", argv);
 	fd = open(path, O_RDONLY);
 	while (1)
 	{

@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:45:17 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/11 09:20:03 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/17 10:21:43 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	count_lines(char *argv)
 	int		fd;
 
 	i = 0;
-	path = ft_strjoin("maps/", argv);
+	path = ft_strjoin("maps/mandatory/", argv);
 	fd = open(path, O_RDONLY);
 	while (1)
 	{

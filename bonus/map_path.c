@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 12:25:35 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/14 10:32:05 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/17 10:22:32 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	fill_map_path(t_stack *stack, char *argv)
 	i = 0;
 	line = 0;
 	stack->check_path = (char **)malloc(sizeof(char *) * (stack->rows + 1));
-	path = ft_strjoin("maps/", argv);
+	path = ft_strjoin("maps/bonus/", argv);
 	fd = open(path, O_RDONLY);
 	while (1)
 	{
