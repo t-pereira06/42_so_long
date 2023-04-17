@@ -51,9 +51,7 @@ $ make fclean
 ## Grade:
 
 ##Video Examples:
+![simplescreenrecorder-2023-04-17_14 56 53](https://user-images.githubusercontent.com/118270669/232506622-7d8a51a1-fc78-4fe1-809e-875f9c99c88c.gif)
 
-
-
-https://user-images.githubusercontent.com/118270669/232504564-f272616c-5679-4fc6-b9d0-6a6000f6a249.mp4
 
 
