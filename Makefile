@@ -6,7 +6,7 @@
 #    By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 14:07:55 by tsodre-p          #+#    #+#              #
-#    Updated: 2023/04/12 14:23:24 by tsodre-p         ###   ########.fr        #
+#    Updated: 2023/04/19 09:07:43 by tsodre-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = so_long
 NAME_BONUS = so_long_bonus
 
 LIBFT = libft/libft.a
-MLX = mlx/libmlx_Linux.a
+MLX = minilibx-linux/libmlx_Linux.a
 
 CC = cc -g
 RM = rm -f
@@ -48,7 +48,7 @@ $(LIBFT):
 	@$(MAKE) -C ./libft
 
 $(MLX):
-	@$(MAKE) -C ./mlx
+	@$(MAKE) -C ./minilibx-linux
 
 $(NAME): $(OBJ) $(LIBFT) $(MLX)
 		@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(MLX) -lXext -lX11 -o so_long
@@ -60,7 +60,7 @@ bonus: $(NAME_BONUS)
 
 clean:
 		@$(MAKE) clean -C ./libft
-		@$(MAKE) clean -C ./mlx
+		@$(MAKE) clean -C ./minilibx-linux
 		@$(RM) $(FILES_O) $(FILES_O_BONUS)
 
 fclean: clean

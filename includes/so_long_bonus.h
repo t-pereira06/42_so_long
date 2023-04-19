@@ -6,7 +6,7 @@
 /*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:39:13 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/14 10:35:31 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2023/04/19 09:02:50 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <X11/keysym.h>
 # include <stdbool.h>
 # include "../libft/libft.h"
-# include "../mlx/mlx.h"
+# include "../minilibx-linux/mlx.h"
 
 # define SIZE 32
 # define PLAYER 'P'
