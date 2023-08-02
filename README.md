@@ -54,5 +54,7 @@ Mandatory:
 Bonus:
 ![simplescreenrecorder-2023-04-17_15 06 18](https://user-images.githubusercontent.com/118270669/232509272-58d16ea3-e8fc-4149-8839-1db7790c4501.gif)
 
+# Grade:
+![Screenshot from 2022-11-21 15-30-59](https://github.com/t-pereira06/42_so_long/assets/118270669/813f6f5a-f432-460d-8cb0-b7ef22aa3253)
 
 
