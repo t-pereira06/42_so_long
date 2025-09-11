@@ -1,0 +1,21 @@
+# Object files
+*.o
+
+# Static libraries
+*.a
+
+# Shared libraries
+*.so
+*.dylib
+
+# Executables
+so_long
+so_long_game
+test_suite
+
+# Build directory
+/build/
+/CMakeFiles/
+/CMakeCache.txt
+/Makefile
+cmake_install.cmake

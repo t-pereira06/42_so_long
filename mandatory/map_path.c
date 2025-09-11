@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_path.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsodre-p <tsodre-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsodre-p <tsodre-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 12:25:35 by tsodre-p          #+#    #+#             */
-/*   Updated: 2023/04/17 10:21:37 by tsodre-p         ###   ########.fr       */
+/*   Updated: 2025/09/11 14:01:31 by tsodre-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	flood_fill(t_stack *stack, char **map, int x, int y)
 	static int	collectibles;
 	static int	exits;
 
-	if (y < 0 || x < 0 || y > stack->rows || x > stack->columns
+	if (y < 0 || x < 0 || y >= stack->rows || x >= stack->columns
 		|| map[y][x] == '1' || map[y][x] == 'X')
 		return (0);
 	if (map[y][x] == EXIT)
